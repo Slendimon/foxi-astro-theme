@@ -1,0 +1,377 @@
+/* Modo oscuro optimizado para salud mental - SAME Platform */
+
+/* Variables CSS para el modo oscuro de salud mental */
+:root.dark {
+  /* Colores de fondo optimizados para reducir fatiga visual */
+  --bg-primary: #0a0f1c;
+  --bg-secondary: #1a1f2e;
+  --bg-tertiary: #2d3748;
+  --bg-card: #1e293b;
+  --bg-hover: #334155;
+
+  /* Colores de texto optimizados para legibilidad */
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-accent: #cbd5e1;
+
+  /* Bordes suaves para reducir contraste */
+  --border-light: #334155;
+  --border-medium: #475569;
+
+  /* Sombras suaves para profundidad sin fatiga */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+
+  /* Gradientes suaves para transiciones */
+  --gradient-primary: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  --gradient-secondary: linear-gradient(135deg, #334155 0%, #475569 100%);
+}
+
+/* Estilos base para el modo oscuro */
+.dark {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Secciones principales */
+.dark .section {
+  background-color: var(--bg-primary);
+}
+
+.dark .section:nth-child(even) {
+  background-color: var(--bg-secondary);
+}
+
+/* Tarjetas optimizadas para salud mental */
+.dark .mental-health-card {
+  background: var(--gradient-primary);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.dark .mental-health-card:hover {
+  background: var(--gradient-secondary);
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Texto optimizado */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: var(--text-primary);
+}
+
+.dark p {
+  color: var(--text-secondary);
+}
+
+.dark .text-muted {
+  color: var(--text-muted);
+}
+
+/* Navegación */
+.dark .navbar {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-light);
+  backdrop-filter: blur(10px);
+}
+
+.dark .nav-link {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.dark .nav-link:hover {
+  color: var(--text-primary);
+}
+
+.dark .nav-link.active {
+  color: var(--text-accent);
+}
+
+/* Botones optimizados para salud mental */
+.dark .btn-primary {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: white;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.dark .btn-primary:hover {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.dark .btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.dark .btn-secondary:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-medium);
+}
+
+/* Formularios */
+.dark .form-input {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.dark .form-input:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+  background-color: var(--bg-hover);
+}
+
+.dark .form-label {
+  color: var(--text-secondary);
+}
+
+/* Footer */
+.dark .footer {
+  background: var(--gradient-primary);
+  border-top: 1px solid var(--border-light);
+}
+
+/* Badges y etiquetas */
+.dark .badge {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.dark .badge-blue {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color: white;
+}
+
+.dark .badge-green {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+}
+
+.dark .badge-lavender {
+  background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+  color: white;
+}
+
+.dark .badge-yellow {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+}
+
+/* Modales y overlays */
+.dark .modal {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+}
+
+.dark .modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Scrollbar personalizado para modo oscuro */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Enlaces */
+.dark a {
+  color: #0ea5e9;
+  transition: color 0.2s ease;
+}
+
+.dark a:hover {
+  color: #38bdf8;
+}
+
+/* Código y bloques de texto */
+.dark code {
+  background-color: var(--bg-tertiary);
+  color: #f59e0b;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+.dark pre {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.dark pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Tablas */
+.dark table {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+}
+
+.dark th, .dark td {
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.dark th {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+/* Animaciones suaves para transiciones */
+.dark * {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Efectos especiales para contenido sensible */
+.dark .crisis-content {
+  border-left: 4px solid #dc2626;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.dark .crisis-content h3 {
+  color: #fca5a5;
+}
+
+.dark .crisis-content p {
+  color: #f87171;
+}
+
+/* Dashboard y métricas */
+.dark .dashboard-card {
+  background: var(--gradient-primary);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.dark .metric-value {
+  color: var(--text-accent);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.dark .metric-label {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Testimonios */
+.dark .testimonial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.dark .testimonial-text {
+  color: var(--text-secondary);
+}
+
+.dark .testimonial-author {
+  color: var(--text-muted);
+}
+
+/* Recursos y tips */
+.dark .resource-card {
+  background: var(--gradient-primary);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.dark .tip-card {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: var(--text-primary);
+}
+
+/* Estados de carga */
+.dark .loading-spinner {
+  border-color: var(--border-light);
+  border-top-color: #0ea5e9;
+}
+
+/* Notificaciones */
+.dark .notification {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.dark .notification.success {
+  border-left-color: #22c55e;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+}
+
+.dark .notification.warning {
+  border-left-color: #f59e0b;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+}
+
+.dark .notification.error {
+  border-left-color: #dc2626;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%);
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+  .dark .section {
+    padding: 2rem 1rem;
+  }
+
+  .dark .mental-health-card {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Soporte para usuarios con preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .dark * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Alto contraste para accesibilidad */
+@media (prefers-contrast: high) {
+  .dark {
+    --border-light: #64748b;
+    --border-medium: #94a3b8;
+  }
+
+  .dark .mental-health-card {
+    border-width: 2px;
+  }
+
+  .dark .btn-primary,
+  .dark .btn-secondary {
+    border-width: 2px;
+  }
+}

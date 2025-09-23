@@ -1,0 +1,81 @@
+---
+// Wellness Tips Section
+// ------------
+// Description: Practical, evidence-based tips for student mental wellness
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import MentalHealthCard from '../../ui/cards/MentalHealthCard.astro'
+import Button from '../../ui/Button.astro'
+
+// Content
+import habitIcon from '../../../assets/cards/feature-01.svg'
+import sleepIcon from '../../../assets/cards/feature-02.svg'
+import connectIcon from '../../../assets/cards/feature-03.svg'
+import focusIcon from '../../../assets/cards/feature-04.svg'
+import balanceIcon from '../../../assets/cards/feature-05.svg'
+---
+
+<Section id="tips">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">Consejos y <strong>Buenas Prácticas</strong> SAME</h2>
+			<p class="pb-0 text-lg">
+				Recomendaciones prácticas basadas en evidencia para mejorar tu bienestar mental durante la vida universitaria en la UNJBG.
+			</p>
+		</Col>
+	</Row>
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+		<MentalHealthCard
+			title="Rutinas Saludables"
+			subtitle="Estructura tu día: horarios de estudio, pausas activas y tiempo de descanso."
+			image={habitIcon}
+			link="/resources#rutinas"
+			type="resource"
+			badge="Hábitos"
+		/>
+		<MentalHealthCard
+			title="Sueño y Energía"
+			subtitle="Higiene del sueño, siestas cortas y reducción de pantallas antes de dormir."
+			image={sleepIcon}
+			link="/resources#sueno"
+			type="resource"
+			badge="Descanso"
+		/>
+		<MentalHealthCard
+			title="Conexión Social"
+			subtitle="Fortalece redes de apoyo con pares, familia y servicios universitarios."
+			image={connectIcon}
+			link="/support"
+			type="support"
+			badge="Relaciones"
+		/>
+		<MentalHealthCard
+			title="Atención Plena (Mindfulness)"
+			subtitle="Respiración 4-7-8, escaneo corporal y pausas de 1 minuto."
+			image={focusIcon}
+			link="/resources#mindfulness"
+			type="resource"
+			badge="Mindfulness"
+		/>
+		<MentalHealthCard
+			title="Equilibrio Académico"
+			subtitle="Técnicas Pomodoro, priorización y límites saludables con el estudio."
+			image={balanceIcon}
+			link="/blog"
+			type="resource"
+			badge="Productividad"
+		/>
+	</div>
+	<Row classes="mt-12">
+		<Col span="12" align="center">
+			<Button size="lg" link="/resources" style="primary">Ver más consejos y guías</Button>
+		</Col>
+	</Row>
+</Section>
+
+

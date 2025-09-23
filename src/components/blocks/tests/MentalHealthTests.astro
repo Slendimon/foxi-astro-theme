@@ -1,0 +1,91 @@
+---
+// Mental Health Tests Section
+// ------------
+// Description: A section showcasing available psychological tests and assessments
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import MentalHealthCard from '../../ui/cards/MentalHealthCard.astro'
+import Button from '../../ui/Button.astro'
+
+// No need for image imports anymore - using icon names directly
+---
+
+<Section id="tests" classes="bg-neutral-50 dark:bg-neutral-900">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">Tests de <strong>Salud Mental</strong> SAME</h2>
+			<p class="pb-0 text-lg">
+				Evalúa diferentes aspectos de tu bienestar mental con tests psicológicos validados científicamente por la UNJBG.
+				Obtén resultados instantáneos y recomendaciones personalizadas.
+			</p>
+		</Col>
+	</Row>
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+		<MentalHealthCard
+			title="Test de Ansiedad (GAD-7)"
+			subtitle="Evalúa la severidad de los síntomas de ansiedad generalizada. Incluye 7 preguntas que te ayudarán a identificar si necesitas apoyo profesional."
+			link="/tests/gad-7"
+			type="test"
+			duration="5-7 min"
+			badge="Validado"
+		/>
+		<MentalHealthCard
+			title="Test de Depresión (PHQ-9)"
+			subtitle="Cuestionario breve que evalúa síntomas depresivos en las últimas dos semanas basado en criterios DSM."
+			link="/tests/phq-9"
+			type="test"
+			duration="5-10 min"
+			badge="Validado"
+		/>
+		<MentalHealthCard
+			title="Estrés Postraumático (PCL-5)"
+			subtitle="Evalúa síntomas de TEPT: reexperimentación, evitación, alteraciones cognitivas y activación."
+			link="/tests/pcl-5"
+			type="test"
+			duration="10-15 min"
+			badge="Validado"
+		/>
+		<MentalHealthCard
+			title="Impacto de Evento (IES-R)"
+			subtitle="Mide intrusión, evitación e hiperactivación asociadas a eventos traumáticos."
+			link="/tests/ies-r"
+			type="test"
+			duration="10-15 min"
+			badge="Validado"
+		/>
+		<MentalHealthCard
+			title="Riesgo Suicida (C-SSRS)"
+			subtitle="Identifica presencia, frecuencia e intensidad de ideación y conducta suicida."
+			link="/tests/c-ssrs"
+			type="crisis"
+			duration="10-20 min"
+			badge="Sensible"
+		/>
+		<MentalHealthCard
+			title="Inventario de Depresión (BDI-II)"
+			subtitle="Mide severidad de depresión: síntomas emocionales, cognitivos y somáticos."
+			link="/tests/bdi-ii"
+			type="test"
+			duration="10-15 min"
+			badge="Validado"
+		/>
+		<MentalHealthCard
+			title="Consumo de Alcohol (AUDIT)"
+			subtitle="Detecta consumo riesgoso, perjudicial o dependencia de alcohol (OMS)."
+			link="/tests/audit"
+			type="sensitive"
+			duration="5-10 min"
+			badge="Sensible"
+		/>
+	</div>
+	<Row classes="mt-12">
+		<Col span="12" align="center">
+			<Button size="lg" link="/tests" style="primary">Ver Todos los Tests</Button>
+		</Col>
+	</Row>
+</Section>

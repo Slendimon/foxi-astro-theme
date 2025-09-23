@@ -1,0 +1,300 @@
+---
+// Mental Health Dashboard
+// ------------
+// Description: Dashboard for tracking mental health progress and goals
+// Properties:
+// - classes: Additional classes to be added to the block
+
+// Components
+// - UI
+import Card from '../../ui/cards/partials/Card.astro'
+import CardBody from '../../ui/cards/partials/CardBody.astro'
+import Button from '../../ui/Button.astro'
+
+// Props
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+---
+
+<section class={`${classes} py-16 bg-gray-50 dark:bg-gray-900`}>
+	<div class="container mx-auto px-6">
+		<div class="max-w-6xl mx-auto">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+					Panel de <span class="text-mental-blue-600">Control Mental</span>
+				</h2>
+				<p class="text-gray-600 dark:text-gray-300">
+					Haz seguimiento de tu progreso en salud mental y alcanza tus metas de bienestar
+				</p>
+			</div>
+
+			<div class="grid lg:grid-cols-3 gap-8">
+				<!-- Test Results Section -->
+				<Card classes="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+					<CardBody>
+						<div class="flex items-center justify-between mb-6">
+							<h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+								Resultados de Tests
+							</h3>
+							<div class="w-10 h-10 bg-mental-blue-100 dark:bg-mental-blue-900/50 rounded-full flex items-center justify-center">
+								<svg class="w-5 h-5 text-mental-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								</svg>
+							</div>
+						</div>
+
+						<div class="space-y-4">
+							<div class="flex justify-between items-center p-3 bg-mental-blue-50 dark:bg-mental-blue-950/30 rounded-lg">
+								<div>
+									<div class="font-medium text-gray-900 dark:text-gray-100">GAD-7 (Ansiedad)</div>
+									<div class="text-sm text-gray-600 dark:text-gray-400">Hace 2 semanas</div>
+								</div>
+								<div class="text-right">
+									<div class="text-lg font-bold text-mental-blue-600">8/21</div>
+									<div class="text-xs text-green-600">Mejorando</div>
+								</div>
+							</div>
+
+							<div class="flex justify-between items-center p-3 bg-mental-green-50 dark:bg-mental-green-950/30 rounded-lg">
+								<div>
+									<div class="font-medium text-gray-900 dark:text-gray-100">PHQ-9 (Depresión)</div>
+									<div class="text-sm text-gray-600 dark:text-gray-400">Hace 1 semana</div>
+								</div>
+								<div class="text-right">
+									<div class="text-lg font-bold text-mental-green-600">5/27</div>
+									<div class="text-xs text-green-600">Excelente</div>
+								</div>
+							</div>
+
+							<div class="flex justify-between items-center p-3 bg-mental-yellow-50 dark:bg-mental-yellow-950/30 rounded-lg">
+								<div>
+									<div class="font-medium text-gray-900 dark:text-gray-100">Estrés General</div>
+									<div class="text-sm text-gray-600 dark:text-gray-400">Hace 3 días</div>
+								</div>
+								<div class="text-right">
+									<div class="text-lg font-bold text-mental-yellow-600">12/40</div>
+									<div class="text-xs text-yellow-600">Moderado</div>
+								</div>
+							</div>
+						</div>
+
+						<Button style="primary" size="sm" classes="w-full mt-4">
+							Ver Todos los Resultados
+						</Button>
+					</CardBody>
+				</Card>
+
+				<!-- Goals & Progress Section -->
+				<Card classes="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+					<CardBody>
+						<div class="flex items-center justify-between mb-6">
+							<h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+								Mis Metas
+							</h3>
+							<div class="w-10 h-10 bg-mental-green-100 dark:bg-mental-green-900/50 rounded-full flex items-center justify-center">
+								<svg class="w-5 h-5 text-mental-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+								</svg>
+							</div>
+						</div>
+
+						<div class="space-y-4">
+							<div class="space-y-2">
+								<div class="flex justify-between items-center">
+									<span class="text-sm font-medium text-gray-900 dark:text-gray-100">Meditar 10 min diarios</span>
+									<span class="text-sm text-gray-600 dark:text-gray-400">5/7 días</span>
+								</div>
+								<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+									<div class="bg-mental-green-600 h-2 rounded-full" style="width: 71%"></div>
+								</div>
+							</div>
+
+							<div class="space-y-2">
+								<div class="flex justify-between items-center">
+									<span class="text-sm font-medium text-gray-900 dark:text-gray-100">Ejercicio 3 veces/semana</span>
+									<span class="text-sm text-gray-600 dark:text-gray-400">2/3 sesiones</span>
+								</div>
+								<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+									<div class="bg-mental-blue-600 h-2 rounded-full" style="width: 67%"></div>
+								</div>
+							</div>
+
+							<div class="space-y-2">
+								<div class="flex justify-between items-center">
+									<span class="text-sm font-medium text-gray-900 dark:text-gray-100">Dormir 8 horas</span>
+									<span class="text-sm text-gray-600 dark:text-gray-400">4/7 noches</span>
+								</div>
+								<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+									<div class="bg-mental-lavender-600 h-2 rounded-full" style="width: 57%"></div>
+								</div>
+							</div>
+
+							<div class="space-y-2">
+								<div class="flex justify-between items-center">
+									<span class="text-sm font-medium text-gray-900 dark:text-gray-100">Sesiones de consejería</span>
+									<span class="text-sm text-gray-600 dark:text-gray-400">3/6 completadas</span>
+								</div>
+								<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+									<div class="bg-mental-yellow-600 h-2 rounded-full" style="width: 50%"></div>
+								</div>
+							</div>
+						</div>
+
+						<Button style="primary" size="sm" classes="w-full mt-4">
+							Actualizar Progreso
+						</Button>
+					</CardBody>
+				</Card>
+
+				<!-- Upcoming Appointments & Reminders -->
+				<Card classes="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+					<CardBody>
+						<div class="flex items-center justify-between mb-6">
+							<h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+								Próximas Citas
+							</h3>
+							<div class="w-10 h-10 bg-mental-lavender-100 dark:bg-mental-lavender-900/50 rounded-full flex items-center justify-center">
+								<svg class="w-5 h-5 text-mental-lavender-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							</div>
+						</div>
+
+						<div class="space-y-4">
+							<div class="p-3 border border-mental-lavender-200 dark:border-mental-lavender-800 rounded-lg">
+								<div class="flex justify-between items-start mb-2">
+									<div>
+										<div class="font-medium text-gray-900 dark:text-gray-100">Sesión de Consejería</div>
+										<div class="text-sm text-gray-600 dark:text-gray-400">Dra. María Silva</div>
+									</div>
+									<span class="text-xs bg-mental-lavender-100 dark:bg-mental-lavender-900/50 text-mental-lavender-800 dark:text-mental-lavender-200 px-2 py-1 rounded-full">
+										Mañana 10:00 AM
+									</span>
+								</div>
+								<div class="text-sm text-gray-600 dark:text-gray-400">
+									Tema: Manejo de estrés académico
+								</div>
+							</div>
+
+							<div class="p-3 border border-mental-blue-200 dark:border-mental-blue-800 rounded-lg">
+								<div class="flex justify-between items-start mb-2">
+									<div>
+										<div class="font-medium text-gray-900 dark:text-gray-100">Grupo de Apoyo</div>
+										<div class="text-sm text-gray-600 dark:text-gray-400">Estudiantes de Ingeniería</div>
+									</div>
+									<span class="text-xs bg-mental-blue-100 dark:bg-mental-blue-900/50 text-mental-blue-800 dark:text-mental-blue-200 px-2 py-1 rounded-full">
+										Viernes 4:00 PM
+									</span>
+								</div>
+								<div class="text-sm text-gray-600 dark:text-gray-400">
+									Tema: Equilibrio vida-estudio
+								</div>
+							</div>
+
+							<div class="p-3 border border-mental-green-200 dark:border-mental-green-800 rounded-lg">
+								<div class="flex justify-between items-start mb-2">
+									<div>
+										<div class="font-medium text-gray-900 dark:text-gray-100">Recordatorio</div>
+										<div class="text-sm text-gray-600 dark:text-gray-400">Meditación Diaria</div>
+									</div>
+									<span class="text-xs bg-mental-green-100 dark:bg-mental-green-900/50 text-mental-green-800 dark:text-mental-green-200 px-2 py-1 rounded-full">
+										Hoy 8:00 PM
+									</span>
+								</div>
+								<div class="text-sm text-gray-600 dark:text-gray-400">
+									10 minutos de mindfulness
+								</div>
+							</div>
+						</div>
+
+						<Button style="primary" size="sm" classes="w-full mt-4">
+							Ver Calendario Completo
+						</Button>
+					</CardBody>
+				</Card>
+			</div>
+
+			<!-- Quick Actions -->
+			<div class="mt-12 text-center">
+				<h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
+					Acciones Rápidas
+				</h3>
+				<div class="flex flex-wrap justify-center gap-4">
+					<Button style="primary" size="md">
+						Nuevo Test
+					</Button>
+					<Button style="neutral" size="md">
+						Agendar Cita
+					</Button>
+					<Button style="neutral" size="md">
+						Ver Recursos
+					</Button>
+					<Button style="neutral" size="md">
+						Contactar Apoyo
+					</Button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* Animaciones para el dashboard */
+	@keyframes slideInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Aplicar animación a las cards del dashboard */
+	:global(.dashboard-card) {
+		animation: slideInUp 0.6s ease-out forwards;
+		opacity: 0;
+	}
+
+	:global(.dashboard-card:nth-child(1)) { animation-delay: 0.1s; }
+	:global(.dashboard-card:nth-child(2)) { animation-delay: 0.2s; }
+	:global(.dashboard-card:nth-child(3)) { animation-delay: 0.3s; }
+
+	/* Efectos hover para las cards */
+	:global(.dashboard-card:hover) {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+	}
+
+	/* Animaciones para las barras de progreso */
+	@keyframes progressFill {
+		from { width: 0%; }
+		to { width: var(--progress-width); }
+	}
+
+	.progress-bar {
+		animation: progressFill 1s ease-out forwards;
+		animation-delay: 0.5s;
+	}
+
+	/* Efectos para los botones de acción rápida */
+	@keyframes bounceIn {
+		0% { transform: scale(0.3); opacity: 0; }
+		50% { transform: scale(1.05); }
+		70% { transform: scale(0.9); }
+		100% { transform: scale(1); opacity: 1; }
+	}
+
+	.quick-action-btn {
+		animation: bounceIn 0.6s ease-out forwards;
+		opacity: 0;
+	}
+
+	.quick-action-btn:nth-child(1) { animation-delay: 0.1s; }
+	.quick-action-btn:nth-child(2) { animation-delay: 0.2s; }
+	.quick-action-btn:nth-child(3) { animation-delay: 0.3s; }
+	.quick-action-btn:nth-child(4) { animation-delay: 0.4s; }
+</style>

@@ -34,25 +34,26 @@ export interface NavData {
 export const navigationBarData: NavData = {
 	logo: {
 		src: '/logo-same.png',
-		alt: 'Logo de Salud Mental',
+		alt: 'SAME - Salud Mental Estudiantil UNJBG',
 		text: ''
 	},
 	navItems: [
-		{ name: 'Plataforma', link: '/' },
-		{ name: 'Salud Mental', link: '/pricing' },
-		{ name: 'Proyecto', link: '/features' },
-		{ name: 'Contact', link: '/contact' },
-		{ name: 'Propuesta de protocolo', link: '/resources' },
+		{ name: 'Inicio', link: '/' },
+		{ name: 'Proyecto', link: '/proyecto' },
+		{ name: 'Tests', link: '/tests' },
+		{ name: 'Recursos', link: '/resources' },
+		{ name: 'Blog', link: '/blog' },
 		{
 			name: 'Apoyo',
 			link: '#',
 			submenu: [
-				{ name: 'DBUN', link: '/blog' },
-				{ name: 'CSM', link: '/changelog' },
-				{ name: 'Preguntas frecuentes', link: '/faq' },
-				{ name: 'Recursos', link: '/terms' }
+				{ name: 'Centros de Apoyo', link: '/support' },
+				{ name: 'Citas', link: '/appointments' },
+				{ name: 'Dashboard', link: '/dashboard' },
+				{ name: 'Preguntas Frecuentes', link: '/faq' },
+				{ name: 'Contacto', link: '/contact' }
 			]
 		},
 	],
-	navActions: [{ name: 'Plataforma', link: '/', style: 'primary', size: 'lg' }]
+	navActions: [{ name: 'Acceder', link: '/dashboard', style: 'primary', size: 'lg' }]
 }

@@ -1,0 +1,70 @@
+---
+// Mental Health Resources Section
+// ------------
+// Description: A section showcasing educational resources including blogs, videos, and podcasts
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import MentalHealthCard from '../../ui/cards/MentalHealthCard.astro'
+import Button from '../../ui/Button.astro'
+
+// No need for image imports anymore - using icon names directly
+---
+
+<Section id="resources">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">Recursos Educativos de <strong>Salud Mental</strong> SAME</h2>
+			<p class="pb-0 text-lg">
+				Accede a contenido educativo especializado diseñado para estudiantes de la UNJBG.
+				Desde artículos informativos hasta meditaciones guiadas.
+			</p>
+		</Col>
+	</Row>
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+		<MentalHealthCard
+			title="Blog de Salud Mental"
+			subtitle="Artículos especializados sobre manejo del estrés académico, técnicas de relajación, y consejos para mantener el bienestar mental durante la universidad."
+			link="/resources/blog"
+			type="resource"
+			badge="Educativo"
+		/>
+		<MentalHealthCard
+			title="Videos Educativos"
+			subtitle="Contenido audiovisual con expertos en psicología, técnicas de respiración, ejercicios de mindfulness y charlas sobre salud mental estudiantil."
+			link="/resources/videos"
+			type="resource"
+			badge="Multimedia"
+		/>
+		<MentalHealthCard
+			title="Podcasts Especializados"
+			subtitle="Episodios de podcast con psicólogos y especialistas en salud mental universitaria. Escucha consejos y experiencias de otros estudiantes."
+			link="/resources/podcasts"
+			type="resource"
+			badge="Audio"
+		/>
+		<MentalHealthCard
+			title="Meditaciones Guiadas"
+			subtitle="Sesiones de meditación y relajación diseñadas específicamente para estudiantes. Incluye técnicas de respiración y mindfulness."
+			link="/resources/meditation"
+			type="resource"
+			badge="Relajación"
+		/>
+		<MentalHealthCard
+			title="Terapia Online"
+			subtitle="Acceso a sesiones de terapia online con profesionales certificados. Programas de apoyo psicológico adaptados a estudiantes universitarios."
+			link="/resources/therapy"
+			type="support"
+			badge="Profesional"
+		/>
+	</div>
+	<Row classes="mt-12">
+		<Col span="12" align="center">
+			<Button size="lg" link="/resources" style="primary">Explorar Todos los Recursos</Button>
+		</Col>
+	</Row>
+</Section>

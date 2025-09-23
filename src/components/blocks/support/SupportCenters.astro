@@ -1,0 +1,100 @@
+---
+// Support Centers Section
+// ------------
+// Description: A section showcasing support centers, emergency resources, and help options
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import MentalHealthCard from '../../ui/cards/MentalHealthCard.astro'
+import Button from '../../ui/Button.astro'
+
+// Content
+// - Support Icons
+import emergencyIcon from '../../../assets/cards/feature-01.svg'
+import counselingIcon from '../../../assets/cards/feature-02.svg'
+import peerIcon from '../../../assets/cards/feature-03.svg'
+import crisisIcon from '../../../assets/cards/feature-04.svg'
+import communityIcon from '../../../assets/cards/feature-05.svg'
+---
+
+<Section id="support" classes="bg-neutral-50 dark:bg-neutral-900">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">Centros de <strong>Apoyo y Ayuda</strong> SAME</h2>
+			<p class="pb-0 text-lg">
+				No estás solo. Accede a una red de apoyo integral con profesionales especializados de la UNJBG
+				y recursos de emergencia disponibles 24/7.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		<Col span="6">
+			<MentalHealthCard
+				title="Línea de Crisis 24/7"
+				subtitle="Acceso inmediato a apoyo psicológico en situaciones de crisis. Línea telefónica disponible las 24 horas con profesionales especializados."
+				image={crisisIcon}
+				link="/crisis"
+				type="crisis"
+				badge="24/7"
+			/>
+		</Col>
+		<Col span="6">
+			<MentalHealthCard
+				title="Centro de Consejería Universitaria"
+				subtitle="Servicios de consejería psicológica gratuita para estudiantes. Citas presenciales y virtuales con psicólogos especializados en salud mental estudiantil."
+				image={counselingIcon}
+				link="/counseling"
+				type="support"
+				badge="Gratuito"
+			/>
+		</Col>
+	</Row>
+	<Row classes="mt-6">
+		<Col span="4">
+			<MentalHealthCard
+				title="Grupos de Apoyo entre Pares"
+				subtitle="Conecta con otros estudiantes que enfrentan desafíos similares. Grupos de apoyo facilitados por profesionales y estudiantes capacitados."
+				image={peerIcon}
+				link="/peer-support"
+				type="support"
+				badge="Comunidad"
+			/>
+		</Col>
+		<Col span="4">
+			<MentalHealthCard
+				title="Recursos de Emergencia"
+				subtitle="Información de contacto para servicios de emergencia, hospitales con servicios de salud mental y recursos comunitarios disponibles."
+				image={emergencyIcon}
+				link="/emergency"
+				type="crisis"
+				badge="Emergencia"
+			/>
+		</Col>
+		<Col span="4">
+			<MentalHealthCard
+				title="Comunidad de Apoyo"
+				subtitle="Únete a nuestra comunidad online de estudiantes comprometidos con el bienestar mental. Comparte experiencias y recibe apoyo mutuo."
+				image={communityIcon}
+				link="/community"
+				type="support"
+				badge="Online"
+			/>
+		</Col>
+	</Row>
+	<Row classes="mt-12">
+		<Col span="12" align="center">
+			<div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6 max-w-2xl mx-auto">
+				<h3 class="text-red-800 dark:text-red-200 font-semibold mb-2">¿Necesitas ayuda inmediata?</h3>
+				<p class="text-red-700 dark:text-red-300 mb-4">Si estás experimentando una crisis de salud mental, no dudes en buscar ayuda profesional inmediatamente.</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<Button size="base" link="tel:911" style="neutral">Llamar Emergencias (911)</Button>
+					<Button size="base" link="/crisis" style="neutral">Línea de Crisis</Button>
+				</div>
+			</div>
+		</Col>
+	</Row>
+</Section>

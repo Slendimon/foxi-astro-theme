@@ -1,0 +1,184 @@
+---
+const { class: className = "" } = Astro.props;
+---
+
+<button
+  id="dark-mode-toggle"
+  class={`relative inline-flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-mental-blue-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900 ${className}`}
+  aria-label="Cambiar entre modo claro y oscuro"
+  type="button"
+>
+  <!-- Icono de sol (modo claro) -->
+  <svg
+    id="sun-icon"
+    class="w-6 h-6 text-mental-yellow-600 transition-all duration-300 ease-in-out transform"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+    ></path>
+  </svg>
+
+  <!-- Icono de luna (modo oscuro) -->
+  <svg
+    id="moon-icon"
+    class="absolute w-6 h-6 text-mental-lavender-400 transition-all duration-300 ease-in-out transform scale-0 rotate-180"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+    ></path>
+  </svg>
+
+  <!-- Efecto de brillo para modo claro -->
+  <div
+    id="sun-glow"
+    class="absolute inset-0 rounded-full bg-gradient-to-r from-mental-yellow-200 to-mental-yellow-300 opacity-0 transition-opacity duration-300 ease-in-out"
+  ></div>
+</button>
+
+<script>
+  // Función para aplicar el tema
+  function applyTheme(theme: 'light' | 'dark') {
+    const html = document.documentElement;
+
+    if (theme === 'dark') {
+      html.classList.add('dark');
+      html.classList.remove('light');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      html.classList.add('light');
+      html.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  // Función para detectar el tema del sistema
+  function getSystemTheme(): 'light' | 'dark' {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  // Función para inicializar el tema
+  function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    const systemTheme = getSystemTheme();
+
+    // Priorizar: tema guardado > tema del sistema
+    const initialTheme = savedTheme || systemTheme;
+
+    applyTheme(initialTheme);
+
+    // Actualizar el estado visual del toggle
+    updateToggleState(initialTheme);
+  }
+
+  // Función para actualizar el estado visual del toggle
+  function updateToggleState(theme: 'light' | 'dark') {
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+    const sunGlow = document.getElementById('sun-glow');
+    const toggle = document.getElementById('dark-mode-toggle');
+
+    if (theme === 'dark') {
+      // Modo oscuro activo
+      sunIcon?.classList.add('scale-0', 'rotate-180');
+      sunIcon?.classList.remove('scale-100', 'rotate-0');
+      moonIcon?.classList.add('scale-100', 'rotate-0');
+      moonIcon?.classList.remove('scale-0', 'rotate-180');
+      sunGlow?.classList.add('opacity-0');
+      sunGlow?.classList.remove('opacity-30');
+      toggle?.setAttribute('aria-label', 'Cambiar a modo claro');
+    } else {
+      // Modo claro activo
+      sunIcon?.classList.add('scale-100', 'rotate-0');
+      sunIcon?.classList.remove('scale-0', 'rotate-180');
+      moonIcon?.classList.add('scale-0', 'rotate-180');
+      moonIcon?.classList.remove('scale-100', 'rotate-0');
+      sunGlow?.classList.add('opacity-30');
+      sunGlow?.classList.remove('opacity-0');
+      toggle?.setAttribute('aria-label', 'Cambiar a modo oscuro');
+    }
+  }
+
+  // Función para alternar el tema
+  function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.classList.contains('dark');
+    const newTheme = isDark ? 'light' : 'dark';
+
+    applyTheme(newTheme);
+    updateToggleState(newTheme);
+
+    // Efecto de animación suave
+    const toggle = document.getElementById('dark-mode-toggle');
+    toggle?.classList.add('animate-pulse');
+    setTimeout(() => {
+      toggle?.classList.remove('animate-pulse');
+    }, 300);
+  }
+
+  // Inicializar cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', initializeTheme);
+
+  // Agregar event listener al toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('dark-mode-toggle');
+    toggle?.addEventListener('click', toggleTheme);
+  });
+
+  // Escuchar cambios en las preferencias del sistema
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    // Solo aplicar el tema del sistema si no hay un tema guardado
+    if (!localStorage.getItem('theme')) {
+      const systemTheme = e.matches ? 'dark' : 'light';
+      applyTheme(systemTheme);
+      updateToggleState(systemTheme);
+    }
+  });
+</script>
+
+<style>
+  /* Animaciones personalizadas para el toggle */
+  @keyframes gentle-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.1);
+    }
+  }
+
+  #dark-mode-toggle:hover #sun-glow {
+    animation: gentle-glow 2s ease-in-out infinite;
+  }
+
+  /* Transiciones suaves para el modo oscuro */
+  .dark {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .light {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Efectos de hover mejorados */
+  #dark-mode-toggle:hover {
+    transform: scale(1.05);
+  }
+
+  #dark-mode-toggle:active {
+    transform: scale(0.95);
+  }
+</style>

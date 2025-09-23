@@ -1,0 +1,171 @@
+---
+// Resources Index Page
+// ------------
+// Description: Main page for all mental health resources
+
+// Components
+// - Layout
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import Row from '../../components/ui/Row.astro'
+import Col from '../../components/ui/Col.astro'
+// - UI
+import MentalHealthCard from '../../components/ui/cards/MentalHealthCard.astro'
+import Button from '../../components/ui/Button.astro'
+
+// Page metadata
+const title = 'Recursos de Salud Mental - SAME UNJBG'
+const description = 'Accede a recursos educativos especializados en salud mental: blog, videos, podcasts, meditaciones y terapia online. Plataforma SAME de la Universidad Nacional Jorge Basadre Grohmann.'
+---
+
+<Layout title={title} description={description}>
+	<Section classes="bg-gradient-to-br from-green-50 to-emerald-100 py-20">
+		<Row>
+			<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+				<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+					Recursos de <span class="text-green-600">Salud Mental</span>
+				</h1>
+				<p class="text-xl text-gray-600 leading-relaxed">
+					Accede a contenido educativo especializado diseñado para estudiantes de la UNJBG. 
+					Desde artículos informativos hasta meditaciones guiadas y terapia profesional.
+				</p>
+			</Col>
+		</Row>
+	</Section>
+
+	<Section classes="py-16">
+		<Row>
+			<Col span="12" classes="mb-12">
+				<h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Recursos Disponibles</h2>
+				<p class="text-center text-gray-600 max-w-3xl mx-auto">
+					Explora nuestra colección de recursos educativos y herramientas de apoyo diseñadas específicamente para el bienestar mental estudiantil.
+				</p>
+			</Col>
+		</Row>
+
+		<Row>
+			<Col span="6" classes="lg:col-span-4">
+				<MentalHealthCard
+					title="Blog de Salud Mental"
+					subtitle="Artículos especializados sobre manejo del estrés académico, técnicas de relajación, y consejos para mantener el bienestar mental durante la universidad."
+					link="/resources/blog"
+					type="resource"
+					badge="Educativo"
+				/>
+			</Col>
+			<Col span="6" classes="lg:col-span-4">
+				<MentalHealthCard
+					title="Videos Educativos"
+					subtitle="Contenido audiovisual con expertos en psicología, técnicas de respiración, ejercicios de mindfulness y charlas sobre salud mental estudiantil."
+					link="/resources/videos"
+					type="resource"
+					badge="Multimedia"
+				/>
+			</Col>
+			<Col span="6" classes="lg:col-span-4">
+				<MentalHealthCard
+					title="Podcasts Especializados"
+					subtitle="Episodios de podcast con psicólogos y especialistas en salud mental universitaria. Escucha consejos y experiencias de otros estudiantes."
+					link="/resources/podcasts"
+					type="resource"
+					badge="Audio"
+				/>
+			</Col>
+		</Row>
+
+		<Row classes="mt-6">
+			<Col span="6" classes="lg:col-span-6">
+				<MentalHealthCard
+					title="Meditaciones Guiadas"
+					subtitle="Sesiones de meditación y relajación diseñadas específicamente para estudiantes. Incluye técnicas de respiración y mindfulness."
+					link="/resources/meditation"
+					type="resource"
+					badge="Relajación"
+				/>
+			</Col>
+			<Col span="6" classes="lg:col-span-6">
+				<MentalHealthCard
+					title="Terapia Online"
+					subtitle="Acceso a sesiones de terapia online con profesionales certificados. Programas de apoyo psicológico adaptados a estudiantes universitarios."
+					link="/resources/therapy"
+					type="support"
+					badge="Profesional"
+				/>
+			</Col>
+		</Row>
+	</Section>
+
+	<Section classes="bg-green-50 py-16">
+		<Row>
+			<Col span="12" align="center" classes="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-bold text-gray-900 mb-6">¿Buscas Apoyo Personalizado?</h2>
+				<p class="text-lg text-gray-600 mb-8">
+					Si necesitas apoyo más personalizado, nuestros centros de apoyo y profesionales están disponibles 
+					para brindarte la ayuda que necesitas.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<Button size="lg" style="primary" link="/support">
+						Centros de Apoyo
+					</Button>
+					<Button size="lg" style="secondary" link="/appointments">
+						Agendar Cita
+					</Button>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
+	<Section classes="py-16">
+		<Row>
+			<Col span="12" classes="mb-8">
+				<h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Categorías de Recursos</h2>
+			</Col>
+		</Row>
+		<Row>
+			<Col span="6" classes="lg:col-span-3">
+				<div class="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
+					<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+						<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+						</svg>
+					</div>
+					<h3 class="font-semibold text-gray-900 mb-2">Educativo</h3>
+					<p class="text-sm text-gray-600">Artículos y guías informativas</p>
+				</div>
+			</Col>
+			<Col span="6" classes="lg:col-span-3">
+				<div class="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
+					<div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+						<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+						</svg>
+					</div>
+					<h3 class="font-semibold text-gray-900 mb-2">Multimedia</h3>
+					<p class="text-sm text-gray-600">Videos y contenido audiovisual</p>
+				</div>
+			</Col>
+			<Col span="6" classes="lg:col-span-3">
+				<div class="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
+					<div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+						<svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+						</svg>
+					</div>
+					<h3 class="font-semibold text-gray-900 mb-2">Relajación</h3>
+					<p class="text-sm text-gray-600">Meditación y mindfulness</p>
+				</div>
+			</Col>
+			<Col span="6" classes="lg:col-span-3">
+				<div class="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
+					<div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+						<svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+						</svg>
+					</div>
+					<h3 class="font-semibold text-gray-900 mb-2">Profesional</h3>
+					<p class="text-sm text-gray-600">Apoyo terapéutico especializado</p>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+</Layout>

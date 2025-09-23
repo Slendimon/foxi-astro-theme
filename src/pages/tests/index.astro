@@ -1,0 +1,146 @@
+---
+// Tests Index Page
+// ------------
+// Description: Main page for all mental health tests
+
+// Components
+// - Layout
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import Row from '../../components/ui/Row.astro'
+import Col from '../../components/ui/Col.astro'
+// - UI
+import MentalHealthCard from '../../components/ui/cards/MentalHealthCard.astro'
+import Button from '../../components/ui/Button.astro'
+
+// Page metadata
+const title = 'Tests de Salud Mental - SAME UNJBG'
+const description = 'Accede a todos los tests psicológicos validados científicamente para evaluar tu bienestar mental. Plataforma SAME de la Universidad Nacional Jorge Basadre Grohmann.'
+---
+
+<Layout title={title} description={description}>
+	<Section classes="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+		<Row>
+			<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+				<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+					Tests de <span class="text-blue-600">Salud Mental</span>
+				</h1>
+				<p class="text-xl text-gray-600 leading-relaxed">
+					Evalúa diferentes aspectos de tu bienestar mental con tests psicológicos validados científicamente. 
+					Obtén resultados instantáneos y recomendaciones personalizadas para tu cuidado mental.
+				</p>
+			</Col>
+		</Row>
+	</Section>
+
+	<Section classes="py-16">
+		<Row>
+			<Col span="12" classes="mb-12">
+				<h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Tests Disponibles</h2>
+				<p class="text-center text-gray-600 max-w-3xl mx-auto">
+					Todos nuestros tests están basados en instrumentos validados científicamente y son utilizados por profesionales de la salud mental.
+				</p>
+			</Col>
+		</Row>
+
+		<Row>
+			<Col span="6" classes="lg:col-span-4">
+				<MentalHealthCard
+					title="Test de Ansiedad (GAD-7)"
+					subtitle="Evalúa la severidad de los síntomas de ansiedad generalizada. Incluye 7 preguntas que te ayudarán a identificar si necesitas apoyo profesional."
+					link="/tests/gad-7"
+					type="test"
+					duration="5-7 min"
+					badge="Validado"
+				/>
+			</Col>
+			<Col span="6" classes="lg:col-span-4">
+				<MentalHealthCard
+					title="Test de Depresión (PHQ-9)"
+					subtitle="Cuestionario breve que evalúa síntomas depresivos en las últimas dos semanas basado en criterios DSM."
+					link="/tests/phq-9"
+					type="test"
+					duration="5-10 min"
+					badge="Validado"
+				/>
+			</Col>
+			<Col span="6" classes="lg:col-span-4">
+				<MentalHealthCard
+					title="Estrés Postraumático (PCL-5)"
+					subtitle="Evalúa síntomas de TEPT: reexperimentación, evitación, alteraciones cognitivas y activación."
+					link="/tests/pcl-5"
+					type="test"
+					duration="10-15 min"
+					badge="Validado"
+				/>
+			</Col>
+		</Row>
+
+		<Row classes="mt-6">
+			<Col span="6" classes="lg:col-span-4">
+				<MentalHealthCard
+					title="Impacto de Evento (IES-R)"
+					subtitle="Mide intrusión, evitación e hiperactivación asociadas a eventos traumáticos."
+					link="/tests/ies-r"
+					type="test"
+					duration="10-15 min"
+					badge="Validado"
+				/>
+			</Col>
+			<Col span="6" classes="lg:col-span-4">
+				<MentalHealthCard
+					title="Riesgo Suicida (C-SSRS)"
+					subtitle="Identifica presencia, frecuencia e intensidad de ideación y conducta suicida."
+					link="/tests/c-ssrs"
+					type="crisis"
+					duration="10-20 min"
+					badge="Sensible"
+					urgent={true}
+				/>
+			</Col>
+			<Col span="6" classes="lg:col-span-4">
+				<MentalHealthCard
+					title="Inventario de Depresión (BDI-II)"
+					subtitle="Mide severidad de depresión: síntomas emocionales, cognitivos y somáticos."
+					link="/tests/bdi-ii"
+					type="test"
+					duration="10-15 min"
+					badge="Validado"
+				/>
+			</Col>
+		</Row>
+
+		<Row classes="mt-6">
+			<Col span="6" classes="lg:col-span-4 lg:col-start-3">
+				<MentalHealthCard
+					title="Consumo de Alcohol (AUDIT)"
+					subtitle="Detecta consumo riesgoso, perjudicial o dependencia de alcohol (OMS)."
+					link="/tests/audit"
+					type="sensitive"
+					duration="5-10 min"
+					badge="Sensible"
+				/>
+			</Col>
+		</Row>
+	</Section>
+
+	<Section classes="bg-blue-50 py-16">
+		<Row>
+			<Col span="12" align="center" classes="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-bold text-gray-900 mb-6">¿Necesitas Ayuda Profesional?</h2>
+				<p class="text-lg text-gray-600 mb-8">
+					Si los resultados de algún test indican que podrías beneficiarte de apoyo profesional, 
+					no dudes en contactar con nuestros centros de apoyo o agendar una cita.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<Button size="lg" style="primary" link="/support">
+						Centros de Apoyo
+					</Button>
+					<Button size="lg" style="secondary" link="/appointments">
+						Agendar Cita
+					</Button>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+</Layout>

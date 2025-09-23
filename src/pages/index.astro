@@ -5,8 +5,12 @@ import Layout from '../layouts/Layout.astro'
 // - UI
 import Hero from '../components/blocks/hero/HomeCTA.astro'
 import Features from '../components/blocks/features/FeatureCards.astro'
-import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
-import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
+import MentalHealthTests from '../components/blocks/tests/MentalHealthTests.astro'
+import MentalHealthResources from '../components/blocks/resources/MentalHealthResources.astro'
+import SupportCenters from '../components/blocks/support/SupportCenters.astro'
+import AboutSAME from '../components/blocks/about/AboutSAME.astro'
+import WellnessTips from '../components/blocks/tips/WellnessTips.astro'
+import StudentTestimonials from '../components/blocks/testimonials/StudentTestimonials.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 
 // Content
@@ -14,16 +18,21 @@ import CTA from '../components/blocks/CTA/BasicDark.astro'
 import testimonialBackground from '../assets/testimonial-bg-01.webp'
 // - SEO
 const SEO = {
-	title: 'SAME - Plataforma de Salud Mental',
+	title: 'SAME - Salud Mental Estudiantil UNJBG',
 	description:
-		'SAME es una plataforma de salud mental diseñada para ayudar a las personas a mejorar su bienestar mental. Con características como análisis, seguridad y integración, SAME es la solución perfecta para tu negocio.'
+		'SAME es la plataforma integral de salud mental para estudiantes de la UNJBG. Ofrecemos tests psicológicos validados, recursos educativos, centros de apoyo y seguimiento personalizado para mejorar el bienestar mental estudiantil.'
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero />
+	<AboutSAME />
+	<MentalHealthTests />
 	<Features />
-	<Testimonial bg={testimonialBackground} bgPosition="right" />
-	<HighlightBlocks />
+	
+	<MentalHealthResources />
+	<WellnessTips />
+	<SupportCenters />
+	
 	<CTA />
 </Layout>

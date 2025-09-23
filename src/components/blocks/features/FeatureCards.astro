@@ -9,7 +9,7 @@ import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 // - UI
-import Card from '../../ui/cards/FeatureCard.astro'
+import MentalHealthCard from '../../ui/cards/MentalHealthCard.astro'
 
 // Content
 // - Cards
@@ -23,47 +23,57 @@ import feature05 from '../../../assets/cards/feature-05.svg'
 <Section id="features">
 	<Row>
 		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
-			<h2 class="text-pretty">Test de <strong>Salud Mental</strong> validados</h2>
+			<h2 class="text-pretty">Recursos de <strong>Salud Mental</strong> SAME</h2>
 			<p class="pb-0 text-lg">
-				Accede a una amplia gama de tests psicológicos validados científicamente para evaluar diferentes aspectos de tu bienestar mental y emocional.
+				Accede a una amplia gama de recursos validados científicamente para mejorar tu bienestar mental y emocional durante tu vida universitaria en la UNJBG.
 			</p>
 		</Col>
 	</Row>
 	<Row>
 		<Col span="4">
-			<Card
-				title="All your data in one place"
-				subtitle="Stay on top of your tasks and deadlines with our intuitive project management tool. Visualize progress, assign tasks, and collaborate seamlessly."
+			<MentalHealthCard
+				title="Tests Psicológicos Validados"
+				subtitle="Evalúa tu estado mental con tests psicológicos validados científicamente. Obtén insights sobre ansiedad, depresión, estrés y otros aspectos del bienestar mental."
 				image={feature01}
-				link="/features"
+				link="/tests"
+				type="test"
+				badge="Evaluación"
 			/>
 		</Col>
 		<Col span="4" classes="flex flex-col gap-6">
-			<Card
-				title="Organize & manage your projects "
-				subtitle="Stay on top of your tasks and deadlines with our intuitive project management tool. "
+			<MentalHealthCard
+				title="Blogs Educativos"
+				subtitle="Lee artículos especializados sobre salud mental, técnicas de relajación, manejo del estrés académico y consejos para el bienestar estudiantil."
 				image={feature02}
-				link="/features"
+				link="/blog"
+				type="resource"
+				badge="Lectura"
 			/>
-			<Card
-				title="Keep your team connected"
-				subtitle="With our integrated chat platform share updates, files, and messages in a secure and user-friendly environment."
+			<MentalHealthCard
+				title="Videos y Podcasts"
+				subtitle="Accede a contenido multimedia educativo con expertos en psicología, meditaciones guiadas y charlas sobre salud mental universitaria."
 				image={feature03}
-				link="/features"
+				link="/resources"
+				type="resource"
+				badge="Multimedia"
 			/>
 		</Col>
 		<Col span="4" classes="flex flex-col gap-6">
-			<Card
-				title="Manage your customers"
-				subtitle="Build and nurture customer relationships with our powerful CRM system. "
+			<MentalHealthCard
+				title="Centros de Apoyo"
+				subtitle="Conecta con profesionales de la salud mental, centros de apoyo estudiantil y recursos de emergencia disponibles en tu universidad."
 				image={feature04}
-				link="/features"
+				link="/support"
+				type="support"
+				badge="Profesional"
 			/>
-			<Card
-				title="Simplify your financial operations"
-				subtitle="Streamline your billing process with our easy-to-use invoicing tool. Create, send, and track invoices effortlessly."
+			<MentalHealthCard
+				title="Seguimiento Personalizado"
+				subtitle="Monitorea tu progreso en salud mental con herramientas de seguimiento personalizadas y recomendaciones adaptadas a tus necesidades."
 				image={feature05}
-				link="/features"
+				link="/dashboard"
+				type="resource"
+				badge="Dashboard"
 			/>
 		</Col>
 	</Row>

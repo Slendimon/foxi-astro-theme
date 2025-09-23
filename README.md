@@ -1,214 +1,263 @@
-# Foxi - Astro Theme
+# SAME - Plataforma de Salud Mental UNJBG
 
-Open-source Astro website template with fully responsive, customizable TailwindCSS components.
+Plataforma integral de salud mental diseñada específicamente para estudiantes universitarios de la Universidad Nacional Jorge Basadre Grohmann (UNJBG). Ofrecemos evaluaciones psicológicas validadas, recursos educativos especializados y acceso directo a centros de apoyo profesional.
 
-![just-the-basics](https://oxygenna-themes.b-cdn.net/foxi-astro/foxi.png)
+![SAME Plataforma](https://img.shields.io/badge/Estado-Producción-success?style=for-the-badge)
+![Licencia](https://img.shields.io/badge/Licencia-MIT-blue?style=for-the-badge)
+![Astro](https://img.shields.io/badge/Astro-5.13.4-FF5D01?style=for-the-badge&logo=astro)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4.4-38B2AC?style=for-the-badge&logo=tailwind-css)
 
-[![View live Demo](https://oxygenna-themes.b-cdn.net/foxi-astro/button-demo.svg)](https://foxi.netlify.app)
-[![Page Speed Insights (100%)](https://oxygenna-themes.b-cdn.net/foxi-astro/button-pagespeed.svg)](https://pagespeed.web.dev/analysis/https-foxi-netlify-app/c9ig3t85mu?form_factor=desktop)
+## 🎯 Sobre SAME
 
-## Introduction
+SAME (Salud Mental Estudiantil) es una iniciativa de la Universidad Nacional Jorge Basadre Grohmann que busca promover el bienestar mental de la comunidad estudiantil mediante:
 
-### About
+- **Tests Psicológicos Validados**: GAD-7, PHQ-9, PCL-5, IES-R, C-SSRS, BDI-II, AUDIT
+- **Recursos Educativos**: Blog especializado, videos, podcasts y meditaciones guiadas
+- **Centros de Apoyo**: Acceso directo a profesionales de la salud mental
+- **Sistema de Citas**: Agendamiento en línea con especialistas
+- **Dashboard Personal**: Seguimiento del progreso mental del estudiante
 
-Foxi is a free, highly customizable, and production-ready template for Astro, utilizing Tailwind CSS components. Designed with developers in mind, Foxi offers a solid foundation for building modern, high-performance websites quickly and efficiently.
+### 📊 Impacto en la Comunidad
 
-![just-the-basics](https://oxygenna-themes.b-cdn.net/foxi-astro/pagespeedscore.svg)
+Según datos de la DIRESA Tacna:
+- **19.46%** de incidencia de ansiedad
+- **7.45%** de depresión
+- **4.67%** de consumo problemático de alcohol
+- **954 personas** atendidas con problemas psicosociales
+- **19 casos** de intento de suicidio atendidos
 
-### Features
+## ✨ Características Principales
 
-- **Built with Tailwind CSS:** Powered by Tailwind CSS for rapid UI development and responsive design.
-- **Perfect Scores in PageSpeed Insights:** Achieve perfect 100s for both desktop and mobile performance.
-- **Light & Dark Mode Support:** Seamlessly switch between light and dark themes to suit user preferences.
-- **Fully Responsive & Customizable:** Ensure your site looks great on any device, with easy customization to match your brand’s identity.
-- **SEO-friendly:** Optimized for search engines to improve visibility and organic traffic.
-- **Pre-designed Pages:** Includes a variety of pages such as Home, Pricing, Features, Contact, and more, to get you started quickly.
-- **Blog with MDX Support & Tags:** Create dynamic blog content with Markdown and JSX, complete with tagging for better organization.
-- **Easy Updates with JSON Files:** Simplify content management and updates using structured JSON files.
-- **Page Loading & Transition Animations:** Enhance user experience with smooth loading and transition effects.
-- **Clean Code & Folder Structure:** Maintain a well-organized codebase that’s easy to navigate and extend.
-- **Heroicons by Tailwind:** Access a wide range of high-quality icons to use across your site.
-- **Built-in Contact Form:** Ready-to-use contact form included.
-- **Utilizes WindUI Components:** Integrates optional WindUI TailwindCSS components.
-- **Modular Design:** The template is organized into reusable blocks enabling easy customization and expansion.
-- **Integrated Analytics:** Includes integrated Google Analytics and Google Tag Manager functionalities.
-- **Sitemap Included:** Includes a sitemap to enhance website navigation and search engine indexing.
+### 🧠 Tests Psicológicos
+- **GAD-7**: Evaluación de ansiedad generalizada (5-7 minutos)
+- **PHQ-9**: Cuestionario de depresión (5-10 minutos)
+- **PCL-5**: Estrés postraumático (10-15 minutos)
+- **IES-R**: Impacto de eventos traumáticos (10-15 minutos)
+- **C-SSRS**: Riesgo suicida (10-20 minutos)
+- **BDI-II**: Inventario de depresión (10-15 minutos)
+- **AUDIT**: Consumo de alcohol (5-10 minutos)
 
-### Upgrade to Pro Version
+### 📚 Recursos Educativos
+- **Blog Especializado**: Artículos sobre manejo del estrés académico
+- **Videos Educativos**: Contenido audiovisual con expertos
+- **Podcasts**: Conversaciones con psicólogos especializados
+- **Meditaciones Guiadas**: Técnicas de relajación para estudiantes
+- **Terapia Online**: Acceso a sesiones profesionales
 
-| Feature                   | Free Version               | Pro Version                                                      |
-| :------------------------ | :------------------------- | :--------------------------------------------------------------- |
-| Tailwind CSS              | ✅                         | ✅                                                               |
-| Mobile Responsive         | ✅                         | ✅                                                               |
-| SEO-Friendly              | ✅                         | ✅                                                               |
-| i18n Multilingual Support | ❌                         | ✅                                                               |
-| Keystatic CMS             | ❌                         | ✅                                                               |
-| Content Collections       | ✅                         | ✅                                                               |
-| Mega Menu                 | ❌                         | ✅                                                               |
-| Video Popup               | ❌                         | ✅                                                               |
-| Lottie File Integration   | ❌                         | ✅                                                               |
-| Homepage Variations       | ❌                         | ✅                                                               |
-| Features Page Variations  | ❌                         | ✅                                                               |
-| Integrations Page         | ❌                         | ✅                                                               |
-| Advanced Pricing Page     | ❌                         | ✅                                                               |
-| Blog Collection           | ✅                         | ✅                                                               |
-| Blog Categories           | ✅                         | ✅                                                               |
-| Blog Authors              | ❌                         | ✅                                                               |
-| Post Pagination           | ❌                         | ✅                                                               |
-| eGuides Collection        | ❌                         | ✅                                                               |
-| Roadmap Page              | ❌                         | ✅                                                               |
-| SignUp Page               | ❌                         | ✅                                                               |
-| Changelog Page            | ✅                         | ✅                                                               |
-| FAQ Page                  | ✅                         | ✅                                                               |
-| Terms Page                | ✅                         | ✅                                                               |
-| Working Contact Page      | ❌                         | ✅                                                               |
-| Total Pages               | 10                         | 20+                                                              |
-|                           |                            |                                                                  |
-| Free Updates              | ✅                         | ✅                                                               |
-| License                   | MIT                        | Commercial                                                       |
-|                           |                            |                                                                  |
-| Pricing                   | Free                       | $79.99                                                           |
-|                           | Continue with Free version | [View Pro Version](https://astro.build/themes/details/foxi-pro/) |
+### 🏥 Centros de Apoyo
+- **Línea de Crisis 24/7**: Apoyo inmediato en situaciones de emergencia
+- **Centros de Atención**: Ubicaciones físicas en campus universitario
+- **Profesionales Certificados**: Psicólogos especializados en salud estudiantil
+- **Grupos de Apoyo**: Espacios para compartir experiencias
 
-[![Get Pro Version](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/primary-button-get-foxi-pro.svg)](https://oxygenna.lemonsqueezy.com/buy/2e32ec07-aa31-45a4-835d-8ebb7f6048cc)
-[![View Foxi Pro live Demo](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/secondary-button-foxi-pro-demo.svg)](https://foxi-pro.netlify.app/)
+### 📱 Características Técnicas
+- **Diseño Responsive**: Optimizado para móviles y tablets
+- **Tema Claro**: Diseño enfocado en la legibilidad y reducción de fatiga visual
+- **Accesibilidad WCAG**: Cumple estándares de accesibilidad web
+- **Navegación Intuitiva**: Estructura clara y fácil de usar
+- **Carga Rápida**: Optimizado para performance (PageSpeed 100%)
+- **SEO Optimizado**: Mejor visibilidad en motores de búsqueda
 
-## Getting Started
+## 🚀 Inicio Rápido
 
-### Commands
+### Requisitos del Sistema
 
-After downloading the template, you'll need to install some dependencies. Once that's done, you can run it on your local server. Check out the package.json file to see what scripts are available.
+- **Node.js**: Versión 20.3.0 o superior
+- **npm**: Incluido con Node.js
+- **Sistema Operativo**: Windows, macOS o Linux
 
-| Command           | Action                                                                                                   |
-| :---------------- | :------------------------------------------------------------------------------------------------------- |
-| `nvm use ...`     | [Install node js](https://nodejs.org/en/download/) You will need to use Node.js version 20.3.0 or later. |
-| `npm install`     | Installs dependencies                                                                                    |
-| `npm run dev`     | Starts local dev server at `localhost:4321`                                                              |
-| `npm run build`   | Build your production site to `./dist/`                                                                  |
-| `npm run preview` | Preview your build locally, before deploying                                                             |
+### Instalación y Ejecución
 
-### Folder structure
+```bash
+# 1. Instalar dependencias
+npm install
 
-Inside Foxi Astro project, you'll see the following folders and files:
+# 2. Iniciar servidor de desarrollo
+npm run dev
 
-```plaintext
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── assets/
-│   ├── components/
-│   │   ├── blocks/
-│   │   │   └── ...
-│   │   └── ui/
-│   │       └── ...
-│   ├── config/
-│   │   └── ...
-│   ├── content/
-│   │   └── blog/
-│   │       └── ...
-│   ├── data/
-│   │   └── ...
-│   ├── icons/
-│   │   └── ...
-│   ├── layouts/
-│   │   └── ...
-│   ├── page-sections/
-│   │   └── home/
-│   │       └── ...
-│   └── pages/
-│       └── ...
-└── package.json
+# 3. Abrir navegador en http://localhost:4321
 ```
 
-| Directory/File           | Description                                                                                                                        |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `public/`                | Contains static assets like images and the favicon. These files are served directly at the root URL.                               |
-| `src/assets/`            | Contains all images and assets used in the project.                                                                                |
-| `src/components/`        | Contains reusable components for your site. This directory is divided into `ui` for UI components and `blocks` for section blocks. |
-| `src/components/blocks/` | Contains Section blocks used throughout the site.                                                                                  |
-| `src/components/ui/`     | Contains individual UI components.                                                                                                 |
-| `src/config/`            | Contains configuration files for the project in typescript format.                                                                 |
-| `src/content/`           | Holds collection data, such as blog posts.                                                                                         |
-| `src/content/blog/`      | Contains individual blog posts in markdown.                                                                                        |
-| `src/data/`              | Contains JSON and md files with content data (like features, testimonials etc).                                                    |
-| `src/icons/`             | Contains all icons used in the project, sourced from [Heroicons](https://heroicons.com/).                                          |
-| `src/layouts/`           | Contains layout components that define the overall structure of your pages.                                                        |
-| `src/pages/`             | Contains `.astro` files for each page. Each file here is exposed as a route based on its file name.                                |
-| `package.json`           | Lists dependencies and scripts for your project, including metadata and various package requirements.                              |
+### Comandos Disponibles
 
-## Theme Configuration
+| Comando          | Descripción                                                                                 |
+| :--------------- | :------------------------------------------------------------------------------------------ |
+| `npm run dev`    | Inicia servidor de desarrollo en `localhost:4321`                                           |
+| `npm run build`  | Construye el sitio para producción en `./dist/`                                            |
+| `npm run preview`| Vista previa del sitio construido localmente                                               |
+| `npm run astro`  | Ejecuta comandos directos de Astro                                                          |
 
-You can find the configuration files in the `src/config` directory. The configuration files are written in TypeScript and contain various settings for the theme, such as basic information, navigation bar, footer navigation, analytics, and social links. You can customize these settings to fit your specific needs.
+## 📁 Estructura del Proyecto
 
-| Configuration File               | Description                                                                                     |
-| -------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `src/config/config.ts`           | Includes the basic configuration settings including SEO, mode, and scroll animations.           |
-| `src/config/navigationBar.ts`    | Includes menu options for the navigation bar.                                                   |
-| `src/config/footerNavigation.ts` | Includes menu options for the footer navigation.                                                |
-| `src/config/analytics.ts`        | Includes the required codes for Google Analytics, Google Tag Manager and Google Search Console. |
-| `src/config/socialLinks.ts`      | Contains the social link data for the website.                                                  |
+```
+same-plataforma-salud-mental/
+├── public/                    # Assets estáticos (imágenes, favicon)
+│   ├── logo-same.png         # Logo de SAME
+│   └── og.jpg                # Imagen para redes sociales
+├── src/
+│   ├── assets/               # Imágenes y recursos multimedia
+│   ├── components/           # Componentes reutilizables
+│   │   ├── blocks/           # Bloques de sección (hero, tests, etc.)
+│   │   └── ui/               # Componentes de UI básicos
+│   ├── config/               # Configuraciones de la aplicación
+│   │   ├── config.ts         # Configuración general (SEO, modo)
+│   │   ├── navigationBar.ts  # Configuración del menú
+│   │   └── tailwind.config.mjs # Configuración de colores
+│   ├── content/              # Contenido dinámico
+│   │   └── blog/             # Artículos del blog
+│   ├── data/                 # Datos JSON y archivos de contenido
+│   │   ├── tests.ts          # Configuración de tests psicológicos
+│   │   └── resources.ts      # Configuración de recursos
+│   ├── icons/                # Íconos personalizados
+│   ├── layouts/              # Layouts de página
+│   ├── pages/                # Páginas del sitio
+│   │   ├── index.astro       # Página principal
+│   │   ├── tests/            # Páginas de tests
+│   │   └── resources/        # Páginas de recursos
+│   └── styles/               # Estilos CSS personalizados
+└── package.json              # Dependencias y scripts
+```
 
-### Basic configuration settings
+### 📋 Descripción de Directorios
 
-In the `src/config/config.ts` file, you can find the basic configuration settings.
-These includes the default SEO settings:
+| Directorio/Archivo         | Descripción                                                                                  |
+| -------------------------- | -------------------------------------------------------------------------------------------- |
+| `public/`                  | Assets estáticos servidos directamente desde la raíz del dominio                            |
+| `src/assets/`              | Imágenes, íconos y recursos multimedia utilizados en el proyecto                             |
+| `src/components/blocks/`   | Componentes de sección reutilizables (hero, tests, recursos, etc.)                           |
+| `src/components/ui/`       | Componentes básicos de interfaz (botones, cards, formularios)                                |
+| `src/config/`              | Archivos de configuración en TypeScript (SEO, navegación, colores)                           |
+| `src/content/blog/`        | Artículos del blog en formato Markdown                                                       |
+| `src/data/`                | Datos JSON con información de tests, recursos y configuraciones                              |
+| `src/icons/`               | Íconos personalizados utilizados en la plataforma                                            |
+| `src/layouts/`             | Layouts que definen la estructura general de las páginas                                     |
+| `src/pages/`               | Archivos `.astro` que generan las rutas del sitio                                            |
+| `src/styles/`              | Estilos CSS personalizados y optimizaciones para salud mental                                |
 
-- `siteTitle`: The default title of your website.
-- `siteDescription`: The default description of your website.
-- `ogImage`: The open graph image for your website.
-- `logo`: The logo for your website.
-- `canonical`: Whether to use canonical links for your website.
-- `noindex`: Prevents search engines from indexing your website if set to true.
+## ⚙️ Configuración de SAME
 
-as well as the default site settings:
+Los archivos de configuración se encuentran en el directorio `src/config/`. Estos archivos contienen todas las configuraciones necesarias para personalizar la plataforma SAME.
 
-- `mode`: The default mode for your website. Can be set to 'auto', 'light', or 'dark'. Auto mode will automatically switch between light and dark modes based on the user's system settings, while 'light' and 'dark' will force the site to use the corresponding mode.
-- `scrollAnimations`: Whether to enable smooth scrolling animations for your website.
+| Archivo de Configuración       | Descripción                                                                                     |
+| ------------------------------ | ----------------------------------------------------------------------------------------------- |
+| `src/config/config.ts`         | Configuración básica: SEO, modo de visualización, animaciones                                  |
+| `src/config/navigationBar.ts`  | Configuración del menú de navegación principal                                                  |
+| `src/config/footerNavigation.ts`| Configuración del menú del footer                                                              |
+| `src/config/analytics.ts`      | Configuración de Google Analytics, Tag Manager y Search Console                                |
+| `src/config/socialLinks.ts`    | Enlaces a redes sociales de la UNJBG                                                           |
 
-## Theme Customization
+### 🔧 Configuración Básica
 
-### Customize the Colors
+**SEO y Metadatos:**
+- `siteTitle`: Título principal del sitio ("SAME - Plataforma de Salud Mental")
+- `siteDescription`: Descripción para motores de búsqueda
+- `ogImage`: Imagen para compartir en redes sociales
+- `logo`: Logo de SAME para la navegación
 
-The theme uses two main colors: primary and neutral. These colors are defined in the Tailwind CSS configuration file. To personalize the color scheme of your project, you can easily modify these color values.
+**Configuración del Sitio:**
+- `mode`: Modo de visualización (solo 'light' para reducir fatiga visual)
+- `scrollAnimations`: Animaciones suaves de scroll habilitadas
+- `canonical`: Enlaces canónicos para SEO
 
-To customize the colors, follow these steps:
+## 🎨 Personalización
 
-1. Open the `tailwind.config.js` file.
-2. Find the `theme` section within the file.
-3. Under `theme`, locate the `extend` property and then the `colors` object.
-4. Modify the color values for `primary` and `neutral` to suit your preferred color palette.
+### Colores de Salud Mental
 
-You can use the [tailwind CSS colors](https://nodejs.org/en/download/) or create your [own palette](https://uicolors.app/create) .
+SAME utiliza una paleta de colores especialmente diseñada para salud mental:
 
-### Customize the Fonts
+```javascript
+// Paleta optimizada para salud mental
+mental: {
+  blue:    // Azul calmante para tests psicológicos
+  green:   // Verde esperanza para recursos positivos
+  lavender:// Lavanda suave para apoyo emocional
+  yellow:  // Amarillo suave para contenido sensible
+  pink:    // Rosa empático para cuidado
+}
+```
 
-To customize the fonts used in your project, follow these steps:
+### Tipografía Accesible
 
-1. **Update the Tailwind CSS Configuration**
+- **Inter**: Fuente principal para excelente legibilidad
+- **Outfit**: Fuente para encabezados con buen contraste
+- **Tamaños optimizados**: Para reducir fatiga visual
 
-   Open the `tailwind.config.js` file. In the `theme` section, find the `extend` property and update the `fontFamily` object.
+## 🚀 Despliegue
 
-2. **Ensure Font Packages are Installed**
+### Construcción para Producción
 
-   Verify that the necessary font packages are included in your `package.json` file and also imported in the `src/layouts/Layout.astro` file.
+```bash
+# Construir el sitio optimizado
+npm run build
 
-You can add your own fonts by following [this guide](https://docs.astro.build/en/guides/fonts/#using-fontsource)
+# Vista previa antes del despliegue
+npm run preview
+```
 
-### Dark/Light Mode
+### Opciones de Despliegue
 
-By default, the site uses an automatic mode switcher, allowing it users to switch between light and dark modes based on the user's system settings or by using the mode switcher in the navigation bar. This is achioeved by setting the `mode-auto` class in the `Layout.astro` file.
+**Vercel (Recomendado):**
+```bash
+npm i -g vercel
+vercel --prod
+```
 
-If you need to enforce a specific theme, you can set the class above as **`mode-light`** or **`mode-dark`**. When **`mode-light`** is applied, the site will consistently display in light mode, and the switcher will not be functional. Similarly, **`mode-dark`** will force the site to dark mode, with the switcher rendered non-functional. These settings allow you to maintain a fixed appearance across the site regardless of user preferences or system settings.
+**Netlify:**
+```bash
+npm run build
+# Subir el contenido de ./dist/
+```
 
-## License
+**Servidor Estático:**
+```bash
+npm run build
+# Servir el contenido de ./dist/ con cualquier servidor web
+```
 
-Copyright © 2024 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
+## 📊 Monitoreo y Analytics
 
-Released under the MIT license.
+### Google Analytics
+- Seguimiento anónimo de uso de la plataforma
+- Métricas de engagement con recursos de salud mental
+- Optimización basada en datos de uso real
 
-## Join the Community
+### Métricas de Salud Mental
+- Tests más utilizados por estudiantes
+- Recursos más accedidos
+- Horarios de mayor uso para optimizar soporte
 
-You can join our community on [Discord](https://discord.gg/YC5Eup8ZEx)!
+## 🔒 Privacidad y Seguridad
 
-[![Hire Us](https://oxygenna-themes.b-cdn.net/foxi-astro/hireus.png)](mailto:info@oxygenna.com,christos@oxygenna.com)
+### Protección de Datos
+- **Anonimato total**: No se almacenan datos personales
+- **Encriptación**: Toda comunicación HTTPS
+- **Cumplimiento**: Normas de protección de datos estudiantiles
+
+### Accesibilidad WCAG
+- **Contraste optimizado**: Para reducir fatiga visual
+- **Navegación por teclado**: Totalmente funcional
+- **Lectores de pantalla**: Completamente compatible
+
+## 📞 Soporte y Contacto
+
+### Centro de Desarrollo
+- **Universidad**: Universidad Nacional Jorge Basadre Grohmann (UNJBG)
+- **Proyecto**: SAME - Salud Mental Estudiantil
+- **Equipo**: Investigadores en Psicología y Desarrollo Web
+
+### Contacto de Emergencia
+- **Línea de Crisis**: 24/7 para estudiantes
+- **Centros de Apoyo**: Ubicaciones físicas en campus
+- **Apoyo Profesional**: Psicólogos especializados
+
+## 📄 Licencia
+
+**MIT License** - Copyright © 2024 Universidad Nacional Jorge Basadre Grohmann
+
+Proyecto desarrollado para promover el bienestar mental estudiantil. Uso libre para instituciones educativas con fines similares.
+
+---
+
+**SAME - Cuidando la Salud Mental de Nuestros Estudiantes** 🧠💙
+
+*Plataforma desarrollada con ❤️ por y para la comunidad universitaria*

@@ -21,13 +21,13 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Foxi. Tailwind CSS Astro Starter Kit by Oxygenna',
+	siteTitle: 'SAME - Plataforma de Salud Mental',
 	siteDescription:
-		'Foxi is a design and development agency that specializes in creating beautiful and functional websites.',
+		'SAME es una plataforma integral de salud mental diseñada para estudiantes universitarios. Ofrecemos tests psicológicos validados, recursos educativos, blogs, videos, podcasts y centros de apoyo para mejorar el bienestar mental.',
 	ogImage: '/og.jpg',
 	logo: {
-		src: '/logo.svg',
-		alt: 'Foxi. logo'
+		src: '/logo-same.png',
+		alt: 'SAME - Plataforma de Salud Mental'
 	},
 	canonical: true,
 	noindex: false,

@@ -1,0 +1,153 @@
+---
+// SAME Contact Form
+// ------------
+// Description: Specialized contact form for mental health support requests
+// Properties:
+// - classes: Additional classes to be added to the block
+
+// Components
+// - UI
+import Card from '../../ui/cards/partials/Card.astro'
+import CardBody from '../../ui/cards/partials/CardBody.astro'
+import Form from '../../ui/forms/Form.astro'
+import FormField from '../../ui/forms/partials/FormField.astro'
+import InputField from '../../ui/forms/form-elements/InputField.astro'
+import TextArea from '../../ui/forms/form-elements/TextArea.astro'
+import Button from '../../ui/Button.astro'
+
+// Props
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+---
+
+<Card classes={`${classes} bg-mental-lavender-50 dark:bg-mental-lavender-950/30 border-mental-lavender-200 dark:border-mental-lavender-800`}>
+	<CardBody>
+		<Form>
+			<div class="text-center mb-8">
+				<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+					Contacta con el Equipo SAME
+				</h2>
+				<p class="text-gray-600 dark:text-gray-300">
+					Estamos aquí para apoyarte. Completa el formulario y te responderemos lo antes posible.
+				</p>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-6 mb-6">
+				<FormField>
+					<InputField type="text" id="firstName" label="Nombre" placeholder="Tu nombre" required />
+				</FormField>
+				<FormField>
+					<InputField type="text" id="lastName" label="Apellidos" placeholder="Tus apellidos" required />
+				</FormField>
+			</div>
+
+			<FormField class="mb-6">
+				<InputField type="email" id="email" label="Correo Electrónico" placeholder="tu.correo@unjbg.edu.pe" required />
+			</FormField>
+
+			<FormField class="mb-6">
+				<InputField type="tel" id="phone" label="Teléfono (opcional)" placeholder="+51 999 999 999" />
+			</FormField>
+
+			<FormField class="mb-6">
+				<label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+					Motivo de Contacto *
+				</label>
+				<select id="subject" name="subject" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-mental-blue-500 focus:border-mental-blue-500 dark:bg-gray-700 dark:text-gray-100">
+					<option value="">Selecciona una opción</option>
+					<option value="informacion">Información sobre SAME</option>
+					<option value="apoyo-psicologico">Solicitar apoyo psicológico</option>
+					<option value="consulta-test">Consulta sobre resultados de tests</option>
+					<option value="recursos">Información sobre recursos disponibles</option>
+					<option value="sugerencias">Sugerencias o comentarios</option>
+					<option value="otro">Otro</option>
+				</select>
+			</FormField>
+
+			<FormField class="mb-6">
+				<label for="urgency" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+					Nivel de Urgencia
+				</label>
+				<select id="urgency" name="urgency" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-mental-blue-500 focus:border-mental-blue-500 dark:bg-gray-700 dark:text-gray-100">
+					<option value="normal">Normal - Puedo esperar respuesta</option>
+					<option value="importante">Importante - Necesito respuesta pronto</option>
+					<option value="urgente">Urgente - Necesito ayuda inmediata</option>
+				</select>
+			</FormField>
+
+			<FormField class="mb-8">
+				<TextArea
+					id="message"
+					label="Mensaje *"
+					placeholder="Describe tu consulta o situación. Recuerda que toda la información es confidencial y será tratada con el mayor respeto y profesionalismo."
+					rows="6"
+					required
+				/>
+			</FormField>
+
+			<div class="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-4 mb-6">
+				<h3 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Información Importante:</h3>
+				<ul class="text-sm text-blue-700 dark:text-blue-300 space-y-1">
+					<li>• Tu información es completamente confidencial</li>
+					<li>• Si necesitas ayuda inmediata, llama al 911 o a nuestra línea de crisis</li>
+					<li>• Responderemos en un plazo máximo de 48 horas</li>
+					<li>• Para emergencias, no uses este formulario</li>
+				</ul>
+			</div>
+
+			<div class="flex flex-col sm:flex-row gap-4">
+				<Button style="primary" type="submit" size="lg" classes="flex-1">
+					Enviar Mensaje
+				</Button>
+				<Button style="neutral" type="button" size="lg" classes="flex-1">
+					Cancelar
+				</Button>
+			</div>
+		</Form>
+	</CardBody>
+</Card>
+
+<style>
+	/* Animaciones para el formulario */
+	@keyframes slideInUp {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Aplicar animación a elementos del formulario */
+	:global(.form-field) {
+		animation: slideInUp 0.4s ease-out forwards;
+		opacity: 0;
+	}
+
+	:global(.form-field:nth-child(1)) { animation-delay: 0.1s; }
+	:global(.form-field:nth-child(2)) { animation-delay: 0.2s; }
+	:global(.form-field:nth-child(3)) { animation-delay: 0.3s; }
+	:global(.form-field:nth-child(4)) { animation-delay: 0.4s; }
+	:global(.form-field:nth-child(5)) { animation-delay: 0.5s; }
+	:global(.form-field:nth-child(6)) { animation-delay: 0.6s; }
+	:global(.form-field:nth-child(7)) { animation-delay: 0.7s; }
+
+	/* Estilos mejorados para el select */
+	select {
+		transition: all 0.3s ease;
+	}
+
+	select:focus {
+		box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+	}
+
+	/* Efectos hover para botones */
+	button:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+</style>

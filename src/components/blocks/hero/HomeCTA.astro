@@ -21,6 +21,7 @@ import user1 from '@/assets/avatars/avatar-01.webp'
 import user2 from '@/assets/avatars/avatar-02.webp'
 import user3 from '@/assets/avatars/avatar-03.webp'
 import frontis from '@/assets/frontis_unjbg.jpeg'
+import fondo from '@/assets/fondo2.jpg'
 const avatars = [
 	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
 	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
@@ -28,24 +29,29 @@ const avatars = [
 ]
 ---
 
-<Section id="intro" padding="top" classes="bg-neutral-50 dark:bg-neutral-900">
+<Section id="intro" padding="top" classes="bg-neutral-50">
 	<Row classes="pb-12">
 		<Col span="1" />
 		<Col span="4" align="left">
-			<h1>Plataforma <strong>Salud Mental</strong><br> un espacio integrador</h1>
+			<h1>Tu bienestar mental es <strong>nuestra prioridad</strong></h1>
 
-			<p class="pb-0 text-lg"> Busca integrar la información de la tutoría universitaria relacionada a la salud mental de los estudiantes</p>
-			<Button size="lg" link="/" style="neutral">Accede a la plataforma</Button>
+			<p class="pb-0 text-lg">SAME es la plataforma de salud mental estudiantil de la UNJBG. Accede a tests psicológicos validados, recursos educativos especializados y apoyo profesional para mejorar tu bienestar durante la universidad.</p>
+			<div class="flex flex-col sm:flex-row gap-4 mt-6">
+				<Button size="lg" link="/tests" style="primary">Realizar Test</Button>
+				<Button size="lg" link="/resources" style="neutral">Explorar Recursos</Button>
+			</div>
 		</Col>
 
-		<Col span="7" align="top" classes="pt-0 bg-dark opacity-50 h-[420px] md:h-[560px] rounded-lg">
+		<Col span="7" align="top" classes="pt-0 h-[320px] md:h-[420px] rounded-lg relative overflow-hidden">
 			<Image
-				src={frontis}
-				alt="Frontis de la Univerisdad Nacional Jorge Basadre Grohmann"
-				class="fit-cover rounded-lg shadow-2xl"
+				src={fondo}
+				alt="Frontis de la Universidad Nacional Jorge Basadre Grohmann - UNJBG Tacna"
+				class="w-full h-full object-cover rounded-lg shadow-2xl"
 				format="webp"
-			/></Col
-		>
+			/>
+			<div class="absolute inset-0 bg-gradient-to-b from-yellow-400/20 to-transparent pointer-events-none"></div>
+			<div class="absolute inset-0 bg-gradient-to-t from-yellow-400/20 to-transparent pointer-events-none"></div>
+		</Col>
 
 	</Row>
 </Section>

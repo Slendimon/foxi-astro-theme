@@ -15,7 +15,7 @@ import { getCollection } from 'astro:content'
 const allPosts = await getCollection('blog')
 ---
 
-<Layout>
-	<Hero title="Tags" />
+<Layout title="Etiquetas del Blog - SAME" description="Explora todas las etiquetas y categorías de artículos sobre salud mental estudiantil en el blog de SAME.">
+	<Hero title="Etiquetas del Blog" text="Descubre artículos organizados por temas relacionados con la salud mental universitaria." />
 	<BlogPosts data={allPosts} />
 </Layout>

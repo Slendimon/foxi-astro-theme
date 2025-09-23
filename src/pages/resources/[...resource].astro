@@ -1,0 +1,256 @@
+---
+// Dynamic Resource Page
+// ------------
+// Description: Dynamic page for all mental health resources
+
+// Components
+// - Layout
+import Layout from '../../layouts/Layout.astro'
+// - UI
+import { Image } from 'astro:assets'
+import Button from '../../components/ui/Button.astro'
+import MentalHealthCard from '../../components/ui/cards/MentalHealthCard.astro'
+import { RESOURCE_DATA } from '../../data/resources'
+
+// Get resource slug from URL
+export function getStaticPaths() {
+    return Object.keys(RESOURCE_DATA).map((resourceSlug: string) => ({
+        params: { resource: resourceSlug }
+    }))
+}
+
+const { resource } = Astro.params
+const resourceParam = Array.isArray(resource) ? resource[0] : resource
+const resourceInfo = resourceParam && typeof resourceParam === 'string' && resourceParam in RESOURCE_DATA ? RESOURCE_DATA[resourceParam] : null
+
+// Redirect if resource doesn't exist
+if (!resourceInfo) {
+    return new Response(null, {
+        status: 302,
+        headers: {
+            Location: '/resources'
+        }
+    })
+}
+
+// - SEO
+const SEO = {
+    title: `${resourceInfo.fullName} | SAME - UNJBG`,
+    description: resourceInfo.description
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<!-- Hero Section -->
+	<section class={`bg-${resourceInfo.color}-50 dark:bg-${resourceInfo.color}-950/30 py-16`}>
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto text-center">
+				<div class="flex justify-center mb-6">
+					<div class={`w-20 h-20 rounded-full bg-${resourceInfo.color}-100 dark:bg-${resourceInfo.color}-900/50 flex items-center justify-center`}>
+						<svg class="w-10 h-10 text-${resourceInfo.color}-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							{resourceInfo.icon === 'book-open' && (
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+							)}
+							{resourceInfo.icon === 'play-circle' && (
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"></path>
+							)}
+							{resourceInfo.icon === 'headphones' && (
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+							)}
+							{resourceInfo.icon === 'sparkles' && (
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3V7M3 5H7M6 17V21M4 19H8M13 3L15.09 8.26L20 6L17.74 10.91L22 13L16.74 15.09L19 20L14.09 17.74L12 22L9.91 17.74L5 20L7.26 15.09L2 13L6.26 10.91L4 6L8.91 8.26L11 3Z"></path>
+							)}
+							{resourceInfo.icon === 'heart' && (
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+							)}
+						</svg>
+					</div>
+				</div>
+				<h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+					{resourceInfo.fullName} <span class={`text-${resourceInfo.color}-600`}>{resourceInfo.name}</span>
+				</h1>
+				<p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+					{resourceInfo.description}
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<Button size="lg" style="primary">Explorar {resourceInfo.name}</Button>
+					<Button size="lg" link="/resources" style="neutral">Ver Otros Recursos</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Resource Information -->
+	<section class="py-16">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<div class="grid md:grid-cols-2 gap-12 items-center">
+					<div>
+						<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+							¿Para quién es este recurso?
+						</h2>
+						<p class="text-gray-600 dark:text-gray-300 mb-6">
+							Este recurso está diseñado específicamente para estudiantes universitarios
+							de la UNJBG que buscan mejorar su bienestar mental y emocional durante
+							su formación académica.
+						</p>
+						<div class={`bg-${resourceInfo.color}-50 dark:bg-${resourceInfo.color}-950/30 rounded-lg p-6 mb-6`}>
+							<h3 class={`font-semibold text-${resourceInfo.color}-800 dark:text-${resourceInfo.color}-200 mb-3`}>
+								Beneficios:
+							</h3>
+							<ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+								<li>• <strong>Accesibilidad:</strong> Disponible 24/7 desde cualquier dispositivo</li>
+								<li>• <strong>Gratuito:</strong> Todos los recursos son completamente gratuitos</li>
+								<li>• <strong>Especializado:</strong> Contenido adaptado a la realidad estudiantil</li>
+								<li>• <strong>Confidencial:</strong> Tu uso es completamente privado</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<MentalHealthCard
+							title={resourceInfo.type === 'support' ? "Apoyo Profesional" : "Contenido Educativo"}
+							subtitle={resourceInfo.type === 'support'
+								? "Accede a sesiones de terapia online con profesionales certificados especializados en salud mental estudiantil."
+								: "Contenido educativo especializado diseñado por expertos en psicología y salud mental."}
+							type={resourceInfo.type as 'resource' | 'support'}
+							badge={resourceInfo.content}
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Content Preview -->
+	<section class="py-16 bg-gray-50 dark:bg-gray-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 text-center">
+					¿Qué encontrarás aquí?
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					{resource === 'blog' && (
+						<>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Manejo del Estrés</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Técnicas prácticas para manejar el estrés académico</p>
+							</div>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Técnicas de Relajación</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Métodos probados para reducir la ansiedad</p>
+							</div>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Bienestar Estudiantil</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Consejos para mantener el equilibrio</p>
+							</div>
+						</>
+					)}
+					{resource === 'videos' && (
+						<>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Mindfulness</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Ejercicios de atención plena</p>
+							</div>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Técnicas de Respiración</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Videos guiados paso a paso</p>
+							</div>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Charlas Expertas</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Conferencias de especialistas</p>
+							</div>
+						</>
+					)}
+					{resource === 'podcasts' && (
+						<>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Experiencias Reales</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Historias de otros estudiantes</p>
+							</div>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Consejos Prácticos</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Tips de profesionales</p>
+							</div>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Episodios Temáticos</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Temas específicos de salud mental</p>
+							</div>
+						</>
+					)}
+					{resource === 'meditation' && (
+						<>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Sesiones Cortas</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Meditaciones de 5-10 minutos</p>
+							</div>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Técnicas Variadas</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Diferentes estilos de meditación</p>
+							</div>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Guiadas por Expertos</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Profesionales certificados</p>
+							</div>
+						</>
+					)}
+					{resource === 'therapy' && (
+						<>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Terapia Individual</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Sesiones personalizadas</p>
+							</div>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Apoyo Especializado</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Psicólogos expertos</p>
+							</div>
+							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Horarios Flexibles</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-300">Adaptados a tu rutina</p>
+							</div>
+						</>
+					)}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="py-16">
+		<div class="container mx-auto px-6">
+			<div class="max-w-2xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+					¿Listo para comenzar?
+				</h2>
+				<p class="text-gray-600 dark:text-gray-300 mb-8">
+					Accede a recursos especializados diseñados para mejorar tu bienestar mental
+					durante tu experiencia universitaria.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<Button size="lg" style="primary">Explorar {resourceInfo.name}</Button>
+					<Button size="lg" link="/support" style="neutral">Contactar Apoyo</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	/* Animaciones específicas para esta página */
+	section {
+		animation: fadeInUp 0.6s ease-out forwards;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	section:nth-child(1) { animation-delay: 0.1s; }
+	section:nth-child(2) { animation-delay: 0.2s; }
+	section:nth-child(3) { animation-delay: 0.3s; }
+	section:nth-child(4) { animation-delay: 0.4s; }
+
+	@keyframes fadeInUp {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

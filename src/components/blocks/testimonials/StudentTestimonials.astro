@@ -1,0 +1,213 @@
+---
+// Student Testimonials Section
+// ------------
+// Description: Component showcasing real testimonials from UNJBG students
+// Properties:
+// - classes: Additional classes to be added to the block
+
+// Components
+// - UI
+import Card from '../../ui/cards/partials/Card.astro'
+import CardBody from '../../ui/cards/partials/CardBody.astro'
+import Avatar from '../../ui/Avatar.astro'
+
+// Props
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+
+// Testimonial data
+const testimonials = [
+	{
+		id: 1,
+		name: "María González",
+		faculty: "Ingeniería",
+		year: "4to año",
+		avatar: "/src/assets/avatars/avatar-01.webp",
+		testimonial: "SAME me ayudó cuando más lo necesitaba. Los tests me permitieron entender que no estaba sola con mi ansiedad académica. La consejería me dio herramientas prácticas para manejar el estrés.",
+		service: "Consejería + Tests",
+		rating: 5
+	},
+	{
+		id: 2,
+		name: "Carlos Mendoza",
+		faculty: "Medicina",
+		year: "5to año",
+		avatar: "/src/assets/avatars/avatar-02.webp",
+		testimonial: "Al principio me costaba pedir ayuda, pero el equipo de SAME fue muy comprensivo. Las sesiones de consejería me ayudaron a equilibrar mis estudios con mi bienestar mental.",
+		service: "Terapia Individual",
+		rating: 5
+	},
+	{
+		id: 3,
+		name: "Ana López",
+		faculty: "Derecho",
+		year: "3er año",
+		avatar: "/src/assets/avatars/avatar-03.webp",
+		testimonial: "Los recursos educativos de SAME son excelentes. Los videos de mindfulness y las meditaciones guiadas me ayudaron enormemente durante los exámenes finales.",
+		service: "Recursos + Meditación",
+		rating: 5
+	},
+	{
+		id: 4,
+		name: "José Ramírez",
+		faculty: "Administración",
+		year: "2do año",
+		avatar: "/src/assets/avatars/avatar-04.webp",
+		testimonial: "Gracias a SAME pude identificar que necesitaba ayuda profesional. El proceso fue confidencial y los consejeros realmente entendieron los desafíos de ser estudiante universitario.",
+		service: "Evaluación + Apoyo",
+		rating: 5
+	},
+	{
+		id: 5,
+		name: "Lucía Torres",
+		faculty: "Educación",
+		year: "4to año",
+		avatar: "/src/assets/avatars/avatar-05.webp",
+		testimonial: "Los grupos de apoyo entre pares fueron transformadores. Conocer a otros estudiantes con experiencias similares me hizo sentir menos sola y más comprendida.",
+		service: "Grupos de Apoyo",
+		rating: 5
+	},
+	{
+		id: 6,
+		name: "Diego Vargas",
+		faculty: "Ciencias",
+		year: "3er año",
+		avatar: "/src/assets/avatars/avatar-06.webp",
+		testimonial: "El sistema de citas en línea es muy práctico. Pude agendar mi sesión en horarios que se adaptaban a mi rutina académica. Excelente servicio.",
+		service: "Citas en Línea",
+		rating: 5
+	}
+]
+---
+
+<section class={`${classes} py-16 bg-gray-50 dark:bg-gray-900`}>
+	<div class="container mx-auto px-6">
+		<div class="max-w-4xl mx-auto">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+					Testimonios de <span class="text-mental-lavender-600">Estudiantes</span>
+				</h2>
+				<p class="text-gray-600 dark:text-gray-300">
+					Historias reales de estudiantes de la UNJBG que han encontrado apoyo en SAME
+				</p>
+			</div>
+
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{testimonials.map((testimonial) => (
+					<Card classes="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+						<CardBody>
+							<div class="flex items-center mb-4">
+							<Avatar
+								size="sm"
+								image={{ src: testimonial.avatar, alt: testimonial.name }}
+								classes="mr-3"
+							/>
+								<div>
+									<h3 class="font-semibold text-gray-900 dark:text-gray-100 text-sm">
+										{testimonial.name}
+									</h3>
+									<p class="text-xs text-gray-600 dark:text-gray-400">
+										{testimonial.faculty} • {testimonial.year}
+									</p>
+								</div>
+							</div>
+
+							<div class="mb-4">
+								<div class="flex text-mental-yellow-400 mb-2">
+									{Array.from({ length: testimonial.rating }, () => (
+										<svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+											<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+										</svg>
+									))}
+								</div>
+							</div>
+
+							<blockquote class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">
+								"{testimonial.testimonial}"
+							</blockquote>
+
+							<div class="border-t border-gray-200 dark:border-gray-700 pt-3">
+								<span class="inline-block bg-mental-lavender-100 dark:bg-mental-lavender-900/50 text-mental-lavender-800 dark:text-mental-lavender-200 text-xs px-2 py-1 rounded-full">
+									{testimonial.service}
+								</span>
+							</div>
+						</CardBody>
+					</Card>
+				))}
+			</div>
+
+			<div class="text-center mt-12">
+				<div class="bg-mental-lavender-50 dark:bg-mental-lavender-950/30 rounded-lg p-6 inline-block">
+					<h3 class="font-semibold text-mental-lavender-800 dark:text-mental-lavender-200 mb-2">
+						¿Quieres compartir tu experiencia?
+					</h3>
+					<p class="text-sm text-mental-lavender-700 dark:text-mental-lavender-300 mb-4">
+						Tu testimonio puede ayudar a otros estudiantes que están pasando por situaciones similares.
+					</p>
+					<button class="bg-mental-lavender-600 hover:bg-mental-lavender-700 text-white px-4 py-2 rounded-md text-sm transition-colors duration-200">
+						Compartir mi Historia
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* Animaciones para testimonios */
+	@keyframes fadeInScale {
+		from {
+			opacity: 0;
+			transform: scale(0.9) translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1) translateY(0);
+		}
+	}
+
+	/* Aplicar animación a las cards de testimonios */
+	:global(.testimonial-card) {
+		animation: fadeInScale 0.6s ease-out forwards;
+		opacity: 0;
+	}
+
+	:global(.testimonial-card:nth-child(1)) { animation-delay: 0.1s; }
+	:global(.testimonial-card:nth-child(2)) { animation-delay: 0.2s; }
+	:global(.testimonial-card:nth-child(3)) { animation-delay: 0.3s; }
+	:global(.testimonial-card:nth-child(4)) { animation-delay: 0.4s; }
+	:global(.testimonial-card:nth-child(5)) { animation-delay: 0.5s; }
+	:global(.testimonial-card:nth-child(6)) { animation-delay: 0.6s; }
+
+	/* Efectos hover mejorados */
+	:global(.testimonial-card:hover) {
+		transform: translateY(-4px);
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	}
+
+	/* Efectos para las estrellas */
+	@keyframes twinkle {
+		0%, 100% { opacity: 1; }
+		50% { opacity: 0.7; }
+	}
+
+	:global(.star-rating svg) {
+		animation: twinkle 2s ease-in-out infinite;
+	}
+
+	:global(.star-rating svg:nth-child(odd)) {
+		animation-delay: 0.5s;
+	}
+
+	/* Efectos para el botón de compartir */
+	@keyframes pulse {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.05); }
+	}
+
+	button:hover {
+		animation: pulse 0.6s ease-in-out;
+	}
+</style>

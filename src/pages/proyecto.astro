@@ -1,0 +1,300 @@
+---
+// Proyecto SAME Page
+// ------------
+// Description: Información completa del proyecto SAME con diseño visual mejorado
+
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+// - UI
+import Button from '../components/ui/Button.astro'
+import { Icon } from 'astro-icon/components'
+
+// Page metadata
+const title = 'Proyecto SAME - Salud Mental Estudiantil UNJBG'
+const description = 'Conoce más sobre el proyecto SAME: objetivos, equipo de investigación, presupuesto y cronograma de la plataforma de salud mental estudiantil de la UNJBG.'
+---
+
+<Layout title={title} description={description}>
+	<!-- Hero Section Compacto -->
+	<Section classes="bg-gradient-to-br from-indigo-50 via-blue-50 to-cyan-50 py-12">
+		<Row>
+			<Col span="12" align="center" classes="mb-8 max-w-4xl mx-auto">
+				<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
+					<Icon name="lucide:university" class="w-4 h-4 mr-2" />
+					UNJBG
+				</span>
+				<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+					Proyecto <span class="text-blue-600">SAME</span>
+				</h1>
+				<p class="text-lg text-gray-600 leading-relaxed mb-6">
+					Plataforma web de salud mental universitaria como apoyo a la tutoría de los estudiantes de la UNJBG
+				</p>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Información Compacta en Grid -->
+	<Section classes="py-12">
+		<Row>
+			<!-- Problema y Objetivo -->
+			<Col span="12" classes="lg:col-span-6 mb-6">
+				<div class="bg-red-50 border border-red-200 rounded-xl p-6 h-full">
+					<div class="flex items-center mb-3">
+						<Icon name="lucide:alert-triangle" class="w-6 h-6 text-red-600 mr-3" />
+						<h3 class="text-lg font-semibold text-gray-900">Problema Identificado</h3>
+					</div>
+					<p class="text-gray-700 text-sm mb-4">
+						No se cuenta con una plataforma integradora como apoyo a la tutoría en relación a la salud mental en la UNJBG.
+					</p>
+					<div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+						<div class="flex items-center mb-2">
+							<Icon name="lucide:target" class="w-5 h-5 text-blue-600 mr-2" />
+							<h4 class="font-semibold text-gray-900 text-sm">Objetivo General</h4>
+						</div>
+						<p class="text-gray-700 text-sm">
+							Implementar una plataforma web de salud mental universitaria (SAME) en la tutoría de los estudiantes de la UNJBG
+						</p>
+					</div>
+				</div>
+			</Col>
+
+			<!-- Estadísticas Críticas -->
+			<Col span="12" classes="lg:col-span-6 mb-6">
+				<div class="bg-orange-50 border border-orange-200 rounded-xl p-6 h-full">
+					<div class="flex items-center mb-3">
+						<Icon name="lucide:trending-up" class="w-6 h-6 text-orange-600 mr-3" />
+						<h3 class="text-lg font-semibold text-gray-900">Estadísticas DIRESA Tacna</h3>
+					</div>
+					<div class="grid grid-cols-2 gap-3 mb-4">
+						<div class="text-center p-3 bg-white rounded-lg">
+							<div class="text-xl font-bold text-red-600">19.46%</div>
+							<p class="text-xs text-gray-600">Ansiedad</p>
+						</div>
+						<div class="text-center p-3 bg-white rounded-lg">
+							<div class="text-xl font-bold text-blue-600">7.45%</div>
+							<p class="text-xs text-gray-600">Depresión</p>
+						</div>
+						<div class="text-center p-3 bg-white rounded-lg">
+							<div class="text-xl font-bold text-purple-600">954</div>
+							<p class="text-xs text-gray-600">Casos atendidos</p>
+						</div>
+						<div class="text-center p-3 bg-white rounded-lg">
+							<div class="text-xl font-bold text-red-600">19</div>
+							<p class="text-xs text-gray-600">Intentos suicidio</p>
+						</div>
+					</div>
+				</div>
+			</Col>
+		</Row>
+
+		<!-- Datos del Proyecto Compactos -->
+		<Row classes="mt-4">
+			<Col span="12">
+				<div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-4">
+					<h2 class="text-lg font-bold text-center text-gray-900 mb-4">Datos del Proyecto</h2>
+					<div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+						<div class="text-center p-3 bg-white rounded-lg">
+							<Icon name="lucide:banknote" class="w-6 h-6 text-green-600 mx-auto mb-1" />
+							<div class="text-base font-bold text-gray-900">S/149,540</div>
+							<p class="text-xs text-gray-600">Presupuesto</p>
+						</div>
+						<div class="text-center p-3 bg-white rounded-lg">
+							<Icon name="lucide:calendar" class="w-6 h-6 text-blue-600 mx-auto mb-1" />
+							<div class="text-base font-bold text-gray-900">24 meses</div>
+							<p class="text-xs text-gray-600">Duración</p>
+						</div>
+						<div class="text-center p-3 bg-white rounded-lg">
+							<Icon name="lucide:play-circle" class="w-6 h-6 text-purple-600 mx-auto mb-1" />
+							<div class="text-base font-bold text-gray-900">Oct 2024</div>
+							<p class="text-xs text-gray-600">Inicio</p>
+						</div>
+						<div class="text-center p-3 bg-white rounded-lg">
+							<Icon name="lucide:coins" class="w-6 h-6 text-yellow-600 mx-auto mb-1" />
+							<div class="text-sm font-bold text-gray-900">Canon Minero</div>
+							<p class="text-xs text-gray-600">Financiamiento</p>
+						</div>
+					</div>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Equipo de Investigación Compacto -->
+	<Section id="equipo" classes="bg-gray-50 py-12">
+		<Row>
+			<Col span="12" classes="mb-6">
+				<h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Equipo de Investigación</h2>
+			</Col>
+		</Row>
+		<Row>
+			<!-- Investigador Principal -->
+			<Col span="12" classes="mb-4">
+				<div class="bg-indigo-50 border border-indigo-200 rounded-xl p-4">
+					<div class="flex items-center justify-center">
+						<Icon name="lucide:crown" class="w-6 h-6 text-indigo-600 mr-3" />
+						<div class="text-center">
+							<h3 class="text-lg font-semibold text-gray-900">Investigador Principal</h3>
+							<p class="text-indigo-600 font-medium">Dra. María del Carmen Silva Cornejo</p>
+						</div>
+					</div>
+				</div>
+			</Col>
+		</Row>
+		<Row>
+			<Col span="12" classes="lg:col-span-6">
+				<div class="bg-white border border-gray-200 rounded-xl p-4">
+					<h4 class="font-semibold text-gray-900 mb-3 text-center">Co-investigadores</h4>
+					<div class="space-y-2 text-sm">
+						<div class="flex items-center">
+							<Icon name="lucide:user-check" class="w-4 h-4 text-blue-600 mr-2" />
+							<span>Mgr. Luis Pastor Yañez</span>
+						</div>
+						<div class="flex items-center">
+							<Icon name="lucide:user-check" class="w-4 h-4 text-green-600 mr-2" />
+							<span>Dra. Giselle Aleman Espinoza</span>
+						</div>
+						<div class="flex items-center">
+							<Icon name="lucide:user-check" class="w-4 h-4 text-purple-600 mr-2" />
+							<span>Dr. Luis Alfredo Fernández Vizcarra</span>
+						</div>
+						<div class="flex items-center">
+							<Icon name="lucide:user-check" class="w-4 h-4 text-pink-600 mr-2" />
+							<span>Dra. Ingrid Manrique Tejada</span>
+						</div>
+					</div>
+				</div>
+			</Col>
+			<Col span="12" classes="lg:col-span-6">
+				<div class="bg-white border border-gray-200 rounded-xl p-4">
+					<h4 class="font-semibold text-gray-900 mb-3 text-center">Equipo de Apoyo</h4>
+					<div class="space-y-2 text-sm">
+						<div class="flex items-center">
+							<Icon name="lucide:user-plus" class="w-4 h-4 text-orange-600 mr-2" />
+							<span>Dr. Nicolás Nuñez Morales (Colaborador)</span>
+						</div>
+						<div class="flex items-center">
+							<Icon name="lucide:search" class="w-4 h-4 text-indigo-600 mr-2" />
+							<span>Lic. Maricielo Gutiérrez Otero (Asistente)</span>
+						</div>
+						<div class="flex items-center">
+							<Icon name="lucide:clipboard-list" class="w-4 h-4 text-teal-600 mr-2" />
+							<span>Bach. Yuliana Coaquera Mamani (Gestora)</span>
+						</div>
+					</div>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Tests Disponibles Compacto -->
+	<Section classes="py-12">
+		<Row>
+			<Col span="12" classes="mb-6">
+				<h2 class="text-2xl font-bold text-center text-gray-900 mb-6">Tests Implementados</h2>
+			</Col>
+		</Row>
+		<Row>
+			<Col span="12" classes="lg:col-span-6">
+				<div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+					<h4 class="font-semibold text-gray-900 mb-3 text-center">Tests Principales</h4>
+					<div class="space-y-3">
+						<div class="flex items-center justify-between bg-white p-3 rounded-lg">
+							<div class="flex items-center">
+								<Icon name="lucide:brain-circuit" class="w-5 h-5 text-blue-600 mr-3" />
+								<div>
+									<span class="font-medium">PHQ-9</span>
+									<p class="text-xs text-gray-600">Síntomas Depresivos</p>
+								</div>
+							</div>
+							<span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">5-10 min</span>
+						</div>
+						<div class="flex items-center justify-between bg-white p-3 rounded-lg">
+							<div class="flex items-center">
+								<Icon name="lucide:heart-pulse" class="w-5 h-5 text-green-600 mr-3" />
+								<div>
+									<span class="font-medium">GAD-7</span>
+									<p class="text-xs text-gray-600">Ansiedad Generalizada</p>
+								</div>
+							</div>
+							<span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">5-7 min</span>
+						</div>
+						<div class="flex items-center justify-between bg-white p-3 rounded-lg">
+							<div class="flex items-center">
+								<Icon name="lucide:shield-alert" class="w-5 h-5 text-purple-600 mr-3" />
+								<div>
+									<span class="font-medium">PCL-5</span>
+									<p class="text-xs text-gray-600">Estrés Postraumático</p>
+								</div>
+							</div>
+							<span class="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded-full">10-15 min</span>
+						</div>
+					</div>
+				</div>
+			</Col>
+			<Col span="12" classes="lg:col-span-6">
+				<div class="bg-orange-50 border border-orange-200 rounded-xl p-4">
+					<h4 class="font-semibold text-gray-900 mb-3 text-center">Tests Especializados</h4>
+					<div class="space-y-3">
+						<div class="flex items-center justify-between bg-white p-3 rounded-lg">
+							<div class="flex items-center">
+								<Icon name="lucide:zap" class="w-5 h-5 text-orange-600 mr-3" />
+								<div>
+									<span class="font-medium">IES-R</span>
+									<p class="text-xs text-gray-600">Impacto de Eventos</p>
+								</div>
+							</div>
+							<span class="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full">10-15 min</span>
+						</div>
+						<div class="flex items-center justify-between bg-white p-3 rounded-lg border border-red-200">
+							<div class="flex items-center">
+								<Icon name="lucide:alert-triangle" class="w-5 h-5 text-red-600 mr-3" />
+								<div>
+									<span class="font-medium">C-SSRS</span>
+									<p class="text-xs text-gray-600">Riesgo Suicida</p>
+								</div>
+							</div>
+							<span class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded-full">10-20 min</span>
+						</div>
+						<div class="flex items-center justify-between bg-white p-3 rounded-lg">
+							<div class="flex items-center">
+								<Icon name="lucide:wine" class="w-5 h-5 text-yellow-600 mr-3" />
+								<div>
+									<span class="font-medium">AUDIT</span>
+									<p class="text-xs text-gray-600">Consumo de Alcohol</p>
+								</div>
+							</div>
+							<span class="text-xs bg-yellow-100 text-yellow-600 px-2 py-1 rounded-full">5-10 min</span>
+						</div>
+					</div>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+
+	<!-- Call to Action Compacto -->
+	<Section classes="bg-blue-50 py-12">
+		<Row>
+			<Col span="12" align="center" classes="max-w-3xl mx-auto">
+				<h2 class="text-2xl font-bold text-gray-900 mb-4">¿Listo para Comenzar?</h2>
+				<p class="text-gray-600 mb-6">
+					Accede a nuestros tests validados y recursos especializados para el bienestar mental estudiantil.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-3 justify-center">
+					<Button size="lg" style="primary" link="/tests">
+						Realizar Tests
+					</Button>
+					<Button size="lg" style="secondary" link="/resources">
+						Explorar Recursos
+					</Button>
+					<Button size="lg" style="neutral" link="/contact">
+						Contactar Equipo
+					</Button>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+</Layout>

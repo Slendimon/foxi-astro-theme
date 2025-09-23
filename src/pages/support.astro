@@ -1,0 +1,294 @@
+---
+// Support Centers Page
+// ------------
+// Description: Dedicated page for mental health support centers and resources
+
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import { Image } from 'astro:assets'
+import Button from '../components/ui/Button.astro'
+import MentalHealthCard from '../components/ui/cards/MentalHealthCard.astro'
+
+// Content
+import crisisIcon from '../assets/cards/feature-01.svg'
+import counselingIcon from '../assets/cards/feature-02.svg'
+import peerIcon from '../assets/cards/feature-03.svg'
+import emergencyIcon from '../assets/cards/feature-04.svg'
+import communityIcon from '../assets/cards/feature-05.svg'
+
+// - SEO
+const SEO = {
+	title: 'Centros de Apoyo | SAME - UNJBG',
+	description:
+		'Accede a una red integral de apoyo para tu salud mental. Líneas de crisis 24/7, consejería universitaria, grupos de apoyo entre pares y recursos de emergencia.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<!-- Hero Section -->
+	<section class="bg-mental-lavender-50 dark:bg-mental-lavender-950/30 py-16">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+					Centros de <span class="text-mental-lavender-600">Apoyo y Ayuda</span>
+				</h1>
+				<p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+					No estás solo. SAME te conecta con una red integral de apoyo profesional,
+					servicios de emergencia y comunidad estudiantil para cuidar tu bienestar mental.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<Button size="lg" link="#crisis" style="danger">Línea de Crisis 24/7</Button>
+					<Button size="lg" link="#counseling" style="primary">Centro de Consejería</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Emergency Banner -->
+	<section class="py-8 bg-red-50 dark:bg-red-950/30 border-b border-red-200 dark:border-red-800">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+					<div class="flex items-center gap-3">
+						<div class="w-12 h-12 bg-red-100 dark:bg-red-900/50 rounded-full flex items-center justify-center">
+							<svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+							</svg>
+						</div>
+						<div>
+							<h3 class="font-semibold text-red-800 dark:text-red-200">¿Necesitas ayuda inmediata?</h3>
+							<p class="text-sm text-red-700 dark:text-red-300">Si estás en crisis, llama ahora mismo</p>
+						</div>
+					</div>
+					<div class="flex gap-3">
+						<Button size="base" link="tel:911" style="danger">911 Emergencias</Button>
+						<Button size="base" link="#crisis" style="neutral">Línea de Crisis</Button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Crisis Support Section -->
+	<section id="crisis" class="py-16">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+						Línea de Crisis <span class="text-red-600">24/7</span>
+					</h2>
+					<p class="text-gray-600 dark:text-gray-300">
+						Apoyo psicológico inmediato para situaciones de crisis emocional
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-8">
+					<MentalHealthCard
+						title="Línea de Crisis SAME"
+						subtitle="Servicio de atención inmediata para estudiantes de la UNJBG. Psicólogos especializados disponibles 24 horas al día, 7 días a la semana."
+						type="crisis"
+						badge="24/7"
+						urgent={true}
+					/>
+					<MentalHealthCard
+						title="Apoyo en Crisis"
+						subtitle="Si estás experimentando pensamientos de autolesión, ansiedad extrema o cualquier situación de emergencia emocional, contacta inmediatamente."
+						type="crisis"
+						badge="Urgente"
+						urgent={true}
+					/>
+				</div>
+
+				<div class="mt-8 bg-red-50 dark:bg-red-950/30 rounded-lg p-6 border border-red-200 dark:border-red-800">
+					<h3 class="font-semibold text-red-800 dark:text-red-200 mb-3">Números de Emergencia:</h3>
+					<div class="grid md:grid-cols-3 gap-4 text-sm">
+						<div class="text-center">
+							<div class="font-bold text-red-700 dark:text-red-300">Línea SAME</div>
+							<div class="text-red-600 dark:text-red-400">+51 999 999 999</div>
+						</div>
+						<div class="text-center">
+							<div class="font-bold text-red-700 dark:text-red-300">Emergencias</div>
+							<div class="text-red-600 dark:text-red-400">911</div>
+						</div>
+						<div class="text-center">
+							<div class="font-bold text-red-700 dark:text-red-300">Policía</div>
+							<div class="text-red-600 dark:text-red-400">105</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Counseling Center Section -->
+	<section id="counseling" class="py-16 bg-gray-50 dark:bg-gray-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+						Centro de Consejería <span class="text-mental-lavender-600">Universitaria</span>
+					</h2>
+					<p class="text-gray-600 dark:text-gray-300">
+						Servicios profesionales gratuitos para estudiantes de la UNJBG
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-8 mb-8">
+					<MentalHealthCard
+						title="Consejería Individual"
+						subtitle="Sesiones personalizadas con psicólogos especializados en salud mental estudiantil. Abordamos estrés académico, ansiedad, depresión y otros desafíos."
+						type="support"
+						badge="Gratuito"
+					/>
+					<MentalHealthCard
+						title="Terapia de Grupo"
+						subtitle="Grupos de apoyo temáticos facilitados por profesionales. Comparte experiencias y recibe apoyo de otros estudiantes."
+						type="support"
+						badge="Grupal"
+					/>
+				</div>
+
+				<div class="bg-mental-lavender-50 dark:bg-mental-lavender-950/30 rounded-lg p-6">
+					<h3 class="font-semibold text-mental-lavender-800 dark:text-mental-lavender-200 mb-3">Información de Contacto:</h3>
+					<div class="grid md:grid-cols-2 gap-4 text-sm">
+						<div>
+							<div class="font-medium text-gray-900 dark:text-gray-100">Horario de Atención:</div>
+							<div class="text-gray-600 dark:text-gray-300">Lunes a Viernes: 8:00 AM - 8:00 PM</div>
+							<div class="text-gray-600 dark:text-gray-300">Sábados: 9:00 AM - 1:00 PM</div>
+						</div>
+						<div>
+							<div class="font-medium text-gray-900 dark:text-gray-100">Ubicación:</div>
+							<div class="text-gray-600 dark:text-gray-300">Centro de Estudiantes UNJBG</div>
+							<div class="text-gray-600 dark:text-gray-300">Av. Jorge Basadre Grohmann s/n</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Peer Support Section -->
+	<section class="py-16">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+						Grupos de Apoyo entre <span class="text-mental-lavender-600">Pares</span>
+					</h2>
+					<p class="text-gray-600 dark:text-gray-300">
+						Conecta con otros estudiantes que enfrentan desafíos similares
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-3 gap-6">
+					<MentalHealthCard
+						title="Grupo de Ansiedad"
+						subtitle="Espacio seguro para compartir experiencias con ansiedad académica y social. Técnicas de manejo y apoyo mutuo."
+						type="support"
+						badge="Semanal"
+					/>
+					<MentalHealthCard
+						title="Grupo de Depresión"
+						subtitle="Apoyo para estudiantes que experimentan síntomas depresivos. Estrategias de coping y conexión emocional."
+						type="support"
+						badge="Quincenal"
+					/>
+					<MentalHealthCard
+						title="Grupo de Bienestar"
+						subtitle="Enfoque en el mantenimiento del bienestar mental. Hábitos saludables, mindfulness y autocuidado."
+						type="support"
+						badge="Mensual"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Emergency Resources Section -->
+	<section class="py-16 bg-gray-50 dark:bg-gray-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+						Recursos de <span class="text-red-600">Emergencia</span>
+					</h2>
+					<p class="text-gray-600 dark:text-gray-300">
+						Servicios disponibles para situaciones críticas
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-6">
+					<MentalHealthCard
+						title="Hospital Regional de Tacna"
+						subtitle="Departamento de Emergencias Psiquiátricas. Atención médica especializada en salud mental."
+						type="crisis"
+						badge="Hospital"
+						urgent={true}
+					/>
+					<MentalHealthCard
+						title="Policía Nacional"
+						subtitle="Apoyo en situaciones de riesgo inmediato. Protocolos especializados para salud mental."
+						type="crisis"
+						badge="Seguridad"
+						urgent={true}
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="py-16">
+		<div class="container mx-auto px-6">
+			<div class="max-w-2xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+					¿Necesitas hablar con alguien?
+				</h2>
+				<p class="text-gray-600 dark:text-gray-300 mb-8">
+					Recuerda que buscar ayuda es un signo de fortaleza, no de debilidad.
+					Tu bienestar mental es nuestra prioridad.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<Button size="lg" link="#crisis" style="danger">Línea de Crisis 24/7</Button>
+					<Button size="lg" link="/contact" style="primary">Contactar Consejería</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	/* Animaciones específicas para esta página */
+	section {
+		animation: fadeInUp 0.6s ease-out forwards;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	section:nth-child(1) { animation-delay: 0.1s; }
+	section:nth-child(2) { animation-delay: 0.2s; }
+	section:nth-child(3) { animation-delay: 0.3s; }
+	section:nth-child(4) { animation-delay: 0.4s; }
+	section:nth-child(5) { animation-delay: 0.5s; }
+	section:nth-child(6) { animation-delay: 0.6s; }
+	section:nth-child(7) { animation-delay: 0.7s; }
+
+	@keyframes fadeInUp {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Efecto de pulso para elementos urgentes */
+	@keyframes gentlePulse {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.02); }
+	}
+
+	.urgent-element {
+		animation: gentlePulse 2s ease-in-out infinite;
+	}
+</style>

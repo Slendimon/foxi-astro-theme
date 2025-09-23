@@ -1,0 +1,167 @@
+---
+// Mental Health Dashboard Page
+// ------------
+// Description: Dedicated page for mental health progress tracking
+
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import MentalHealthDashboard from '../components/blocks/dashboard/MentalHealthDashboard.astro'
+import MentalHealthCard from '../components/ui/cards/MentalHealthCard.astro'
+import Button from '../components/ui/Button.astro'
+
+// - SEO
+const SEO = {
+	title: 'Panel de Control Mental | SAME - UNJBG',
+	description:
+		'Tu panel personal de seguimiento de salud mental. Monitorea tu progreso, revisa resultados de tests, gestiona metas de bienestar y agenda citas.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<!-- Hero Section -->
+	<section class="bg-mental-blue-50 dark:bg-mental-blue-950/30 py-16">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto text-center">
+				<h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+					Mi Panel de <span class="text-mental-blue-600">Salud Mental</span>
+				</h1>
+				<p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+					Tu espacio personal para monitorear tu progreso, gestionar metas de bienestar
+					y mantener el control de tu salud mental.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<Button size="lg" style="primary">Actualizar Progreso</Button>
+					<Button size="lg" link="/tests" style="neutral">Realizar Test</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Quick Stats -->
+	<section class="py-8 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+					<div class="text-center">
+						<div class="text-2xl font-bold text-mental-blue-600">12</div>
+						<div class="text-sm text-gray-600 dark:text-gray-400">Tests Completados</div>
+					</div>
+					<div class="text-center">
+						<div class="text-2xl font-bold text-mental-green-600">8</div>
+						<div class="text-sm text-gray-600 dark:text-gray-400">Sesiones de Apoyo</div>
+					</div>
+					<div class="text-center">
+						<div class="text-2xl font-bold text-mental-lavender-600">15</div>
+						<div class="text-sm text-gray-600 dark:text-gray-400">Días de Racha</div>
+					</div>
+					<div class="text-center">
+						<div class="text-2xl font-bold text-mental-yellow-600">73%</div>
+						<div class="text-sm text-gray-600 dark:text-gray-400">Progreso General</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Dashboard Component -->
+	<MentalHealthDashboard />
+
+	<!-- Additional Features -->
+	<section class="py-16">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+						Herramientas Adicionales
+					</h2>
+					<p class="text-gray-600 dark:text-gray-300">
+						Recursos complementarios para tu bienestar mental
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<MentalHealthCard
+						title="Diario de Bienestar"
+						subtitle="Registra tus estados de ánimo, pensamientos y actividades diarias para identificar patrones y tendencias."
+						type="resource"
+						badge="Personal"
+					/>
+					<MentalHealthCard
+						title="Recordatorios Personalizados"
+						subtitle="Configura notificaciones para recordarte tomar breaks, meditar o realizar actividades de autocuidado."
+						type="resource"
+						badge="Automatizado"
+					/>
+					<MentalHealthCard
+						title="Recursos Personalizados"
+						subtitle="Recomendaciones de contenido basadas en tus necesidades y progreso en salud mental."
+						type="resource"
+						badge="Inteligente"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Motivational Section -->
+	<section class="py-16 bg-mental-green-50 dark:bg-mental-green-950/30">
+		<div class="container mx-auto px-6">
+			<div class="max-w-3xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+					¡Estás Haciendo un Excelente Trabajo!
+				</h2>
+				<p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+					Cuidar de tu salud mental es uno de los actos más valientes y responsables que puedes hacer.
+					Tu compromiso con tu bienestar es admirable y está dando frutos.
+				</p>
+				<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+					<blockquote class="text-mental-green-700 dark:text-mental-green-300 italic mb-4">
+						"El progreso no se mide por la ausencia de problemas, sino por la capacidad de enfrentarlos y superarlos."
+					</blockquote>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						— Recordatorio de tu equipo de apoyo en SAME
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	/* Animaciones específicas para esta página */
+	section {
+		animation: fadeInUp 0.6s ease-out forwards;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	section:nth-child(1) { animation-delay: 0.1s; }
+	section:nth-child(2) { animation-delay: 0.2s; }
+	section:nth-child(3) { animation-delay: 0.3s; }
+	section:nth-child(4) { animation-delay: 0.4s; }
+	section:nth-child(5) { animation-delay: 0.5s; }
+
+	@keyframes fadeInUp {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Animaciones para las estadísticas rápidas */
+	@keyframes countUp {
+		from { transform: scale(0.8); opacity: 0; }
+		to { transform: scale(1); opacity: 1; }
+	}
+
+	.stat-number {
+		animation: countUp 0.8s ease-out forwards;
+	}
+
+	.stat-number:nth-child(1) { animation-delay: 0.1s; }
+	.stat-number:nth-child(2) { animation-delay: 0.2s; }
+	.stat-number:nth-child(3) { animation-delay: 0.3s; }
+	.stat-number:nth-child(4) { animation-delay: 0.4s; }
+</style>
