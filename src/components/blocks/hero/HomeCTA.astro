@@ -5,22 +5,22 @@
 
 // Components
 // - Layout
-import Section from '../../ui/Section.astro'
-import Row from '../../ui/Row.astro'
-import Col from '../../ui/Col.astro'
+import Section from '@/components/ui/Section.astro'
+import Row from '@/components/ui/Row.astro'
+import Col from '@/components/ui/Col.astro'
 // - UI
-import ChipNotification from '../../ui/ChipNotification.astro'
 import { Image } from 'astro:assets'
-import Button from '../../ui/Button.astro'
-import AvatarGroup from '../../ui/AvatarGroup.astro'
+import Button from '@/components/ui/Button.astro'
+import AvatarGroup from '@/components/ui/AvatarGroup.astro'
 
 // Content
 // - Hero Image
-import heroImage from '../../../assets/hero-01.png'
+import heroImage from '@/assets/hero-01.png'
 // - Avatars
-import user1 from '../../../assets/avatars/avatar-01.webp'
-import user2 from '../../../assets/avatars/avatar-02.webp'
-import user3 from '../../../assets/avatars/avatar-03.webp'
+import user1 from '@/assets/avatars/avatar-01.webp'
+import user2 from '@/assets/avatars/avatar-02.webp'
+import user3 from '@/assets/avatars/avatar-03.webp'
+import frontis from '@/assets/frontis_unjbg.jpeg'
 const avatars = [
 	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
 	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
@@ -29,28 +29,23 @@ const avatars = [
 ---
 
 <Section id="intro" padding="top" classes="bg-neutral-50 dark:bg-neutral-900">
-	<Row>
-		<Col span="2" />
-		<Col span="8" align="center">
-			<ChipNotification radius="rounded-full" classes="mb-6">
-				<strong>30K+</strong> satisfied customers
-				<AvatarGroup avatars={avatars} radius="rounded-full" slot="button" />
-			</ChipNotification>
-			<h1>Enhance team <strong>performance</strong> with seamless integration</h1>
+	<Row classes="pb-12">
+		<Col span="1" />
+		<Col span="4" align="left">
+			<h1>Plataforma <strong>Salud Mental</strong><br> un espacio integrador</h1>
 
-			<p class="pb-0 text-lg">Work smarter, not harder, with our innovative platform</p>
-			<Button size="lg" link="/">Get started for free</Button>
+			<p class="pb-0 text-lg"> Busca integrar la información de la tutoría universitaria relacionada a la salud mental de los estudiantes</p>
+			<Button size="lg" link="/" style="neutral">Accede a la plataforma</Button>
 		</Col>
-		<Col span="2" />
-		<Col span="2" />
-		<Col span="8">
+
+		<Col span="7" align="top" classes="pt-0 bg-dark opacity-50 h-[420px] md:h-[560px] rounded-lg">
 			<Image
-				src={heroImage}
-				alt="Foxi. The tailwind astro theme"
-				class="translate-y-8 shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
+				src={frontis}
+				alt="Frontis de la Univerisdad Nacional Jorge Basadre Grohmann"
+				class="fit-cover rounded-lg shadow-2xl"
 				format="webp"
 			/></Col
 		>
-		<Col span="2" />
+
 	</Row>
 </Section>

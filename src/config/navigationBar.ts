@@ -33,25 +33,26 @@ export interface NavData {
 
 export const navigationBarData: NavData = {
 	logo: {
-		src: '/logo.svg',
-		alt: 'The tailwind astro theme',
-		text: 'Foxi.'
+		src: '/logo-same.png',
+		alt: 'Logo de Salud Mental',
+		text: ''
 	},
 	navItems: [
-		{ name: 'Home', link: '/' },
-		{ name: 'Pricing', link: '/pricing' },
-		{ name: 'Features', link: '/features' },
+		{ name: 'Plataforma', link: '/' },
+		{ name: 'Salud Mental', link: '/pricing' },
+		{ name: 'Proyecto', link: '/features' },
+		{ name: 'Contact', link: '/contact' },
+		{ name: 'Propuesta de protocolo', link: '/resources' },
 		{
-			name: 'Resources',
+			name: 'Apoyo',
 			link: '#',
 			submenu: [
-				{ name: 'Blog', link: '/blog' },
-				{ name: 'Changelog', link: '/changelog' },
-				{ name: 'FAQ', link: '/faq' },
-				{ name: 'Terms', link: '/terms' }
+				{ name: 'DBUN', link: '/blog' },
+				{ name: 'CSM', link: '/changelog' },
+				{ name: 'Preguntas frecuentes', link: '/faq' },
+				{ name: 'Recursos', link: '/terms' }
 			]
 		},
-		{ name: 'Contact', link: '/contact' }
 	],
-	navActions: [{ name: 'Try it now', link: '/', style: 'primary', size: 'lg' }]
+	navActions: [{ name: 'Plataforma', link: '/', style: 'primary', size: 'lg' }]
 }
