@@ -16,7 +16,7 @@
 // Props
 type Props = {
 	type?: 'link' | 'button' | 'submit' | 'reset'
-	size?: 'lg' | 'base' | 'sm'
+	size?: 'lg' | 'base' | 'md' | 'sm'
 	link?: string
 	modal?: string
 	style?: 'primary' | 'secondary' | 'neutral' | 'white' | 'accent' | 'danger'
@@ -80,6 +80,10 @@ const {
 
 	.button--base {
 		@apply h-10 px-5 text-sm [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm;
+	}
+
+	.button--md {
+		@apply h-9 px-4 text-sm [&.button--elevated]:shadow-md [&.button--elevated]:hover:shadow-sm [&.button--elevated]:focus:shadow-sm;
 	}
 
 	.button--sm {

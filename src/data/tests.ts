@@ -12,7 +12,7 @@ export interface TestData {
 export const TEST_DATA: Record<string, TestData> = {
 	'gad-7': {
 		name: 'GAD-7',
-		fullName: 'Test de Ansiedad Generalizada',
+		fullName: 'Ansiedad Generalizada',
 		description: 'Evalúa la severidad de los síntomas de ansiedad generalizada en las últimas 2 semanas.',
 		duration: '5-7 min',
 		questions: 7,
@@ -22,7 +22,7 @@ export const TEST_DATA: Record<string, TestData> = {
 	},
 	'phq-9': {
 		name: 'PHQ-9',
-		fullName: 'Test de Depresión',
+		fullName: 'Depresión',
 		description: 'Evalúa la presencia y severidad de síntomas depresivos en las últimas 2 semanas.',
 		duration: '5-10 min',
 		questions: 9,
@@ -32,7 +32,7 @@ export const TEST_DATA: Record<string, TestData> = {
 	},
 	'pcl-5': {
 		name: 'PCL-5',
-		fullName: 'Test de Estrés Postraumático',
+		fullName: 'Estrés Postraumático',
 		description: 'Evalúa síntomas de trastorno de estrés postraumático según los criterios del DSM-5.',
 		duration: '10-15 min',
 		questions: 20,
@@ -42,7 +42,7 @@ export const TEST_DATA: Record<string, TestData> = {
 	},
 	'ies-r': {
 		name: 'IES-R',
-		fullName: 'Test de Impacto de Evento',
+		fullName: 'Impacto de Evento',
 		description: 'Mide la angustia subjetiva causada por eventos traumáticos.',
 		duration: '10-15 min',
 		questions: 22,
@@ -52,7 +52,7 @@ export const TEST_DATA: Record<string, TestData> = {
 	},
 	'c-ssrs': {
 		name: 'C-SSRS',
-		fullName: 'Test de Riesgo Suicida',
+		fullName: 'Riesgo Suicida',
 		description: 'Identifica presencia, frecuencia e intensidad de ideación y conducta suicida.',
 		duration: '10-20 min',
 		questions: 16,
@@ -72,7 +72,7 @@ export const TEST_DATA: Record<string, TestData> = {
 	},
 	'audit': {
 		name: 'AUDIT',
-		fullName: 'Test de Consumo de Alcohol',
+		fullName: 'Consumo de Alcohol',
 		description: 'Detecta consumo riesgoso, perjudicial o dependencia de alcohol según la OMS.',
 		duration: '5-10 min',
 		questions: 10,

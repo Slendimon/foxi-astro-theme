@@ -122,6 +122,6 @@ export const footerNavigationData: FooterData = {
 		}
 	],
 	subFooter: {
-		copywriteText: '© SAME - Universidad Nacional Jorge Basadre Grohmann 2024.'
+		copywriteText: '© SAME - Universidad Nacional Jorge Basadre Grohmann 2025.'
 	}
 }
