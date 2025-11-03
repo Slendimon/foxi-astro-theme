@@ -40,7 +40,7 @@ export const navigationBarData: NavData = {
 	navItems: [
 		{ name: 'Inicio', link: '/' },
 		{ name: 'Proyecto', link: '/proyecto' },
-		{ name: 'Tests', link: '/tests' },
+		{ name: 'Instrumentos de evaluación', link: '/tests' },
 		{ name: 'Recursos', link: '/resources' },
 		{ name: 'Blog', link: '/blog' },
 		{
@@ -55,5 +55,5 @@ export const navigationBarData: NavData = {
 			]
 		},
 	],
-	navActions: [{ name: 'Acceder', link: '/dashboard', style: 'primary', size: 'lg' }]
+	navActions: [{ name: 'Ayuda Para Ti', link: 'https://test.same.com.pe/login', style: 'primary', size: 'lg' }]
 }
