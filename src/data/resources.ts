@@ -45,13 +45,13 @@ export const RESOURCE_DATA: Record<string, ResourceData> = {
         color: 'mental-lavender',
         content: 'Relajación'
     },
-    'therapy': {
-        name: 'Terapia',
-        fullName: 'Terapia Online',
-        description: 'Acceso a sesiones de terapia online con profesionales certificados. Programas de apoyo psicológico adaptados a estudiantes universitarios.',
-        type: 'support',
-        icon: 'heart',
-        color: 'mental-lavender',
-        content: 'Profesional'
-    }
+    // 'therapy': {
+    //     name: 'Terapia',
+    //     fullName: 'Terapia Online',
+    //     description: 'Acceso a sesiones de terapia online con profesionales certificados. Programas de apoyo psicológico adaptados a estudiantes universitarios.',
+    //     type: 'support',
+    //     icon: 'heart',
+    //     color: 'mental-lavender',
+    //     content: 'Profesional'
+    // }
 }

@@ -42,7 +42,7 @@ Según datos de la DIRESA Tacna:
 - **Videos Educativos**: Contenido audiovisual con expertos
 - **Podcasts**: Conversaciones con psicólogos especializados
 - **Meditaciones Guiadas**: Técnicas de relajación para estudiantes
-- **Terapia Online**: Acceso a sesiones profesionales
+
 
 ### 🏥 Centros de Apoyo
 - **Línea de Crisis 24/7**: Apoyo inmediato en situaciones de emergencia
