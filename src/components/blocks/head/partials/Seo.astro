@@ -19,21 +19,45 @@ type Props = {
 }
 
 const { title, description, ogImage, canonical, noindex } = Astro.props
+
+// Convert relative og:image URL to absolute URL
+const getAbsoluteOgImage = (imagePath: string) => {
+	if (!imagePath) return ''
+	if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+		return imagePath
+	}
+	// Use Astro.site if available, otherwise construct from Astro.url
+	const baseUrl = Astro.site || new URL(Astro.url.pathname, Astro.url.origin).origin
+	return new URL(imagePath, baseUrl).href
+}
+
+const absoluteOgImage = getAbsoluteOgImage(ogImage || '')
+const siteName = title ? (title.split(' - ')[0] || title) : 'SAME'
 ---
 
 <Fragment>
-	<title>{title}</title>
-	<meta name="description" content={description} />
+	{title && <title>{title}</title>}
+	{description && <meta name="description" content={description} />}
+	
+	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={Astro.url} />
-	<meta property="og:title" content={title} />
-	<meta property="og:description" content={description} />
-	<meta property="og:image" content={ogImage} />
+	{title && <meta property="og:title" content={title} />}
+	{description && <meta property="og:description" content={description} />}
+	{absoluteOgImage && <meta property="og:image" content={absoluteOgImage} />}
+	{absoluteOgImage && <meta property="og:image:width" content="1200" />}
+	{absoluteOgImage && <meta property="og:image:height" content="630" />}
+	<meta property="og:site_name" content={siteName} />
+	<meta property="og:locale" content="es_ES" />
+	
+	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content={Astro.url} />
-	<meta property="twitter:title" content={title} />
-	<meta property="twitter:description" content={description} />
-	<meta property="twitter:image" content={ogImage} />
+	{title && <meta property="twitter:title" content={title} />}
+	{description && <meta property="twitter:description" content={description} />}
+	{absoluteOgImage && <meta property="twitter:image" content={absoluteOgImage} />}
+	
+	<!-- Canonical URL -->
 	<link rel="canonical" href={Astro.url} />
 	{canonical && <link rel="canonical" href={Astro.url} item-prop="url" />}
 	{noindex && <meta name="robots" content="noindex,nofollow" />}

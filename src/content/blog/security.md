@@ -1,8 +1,8 @@
 ---
 title: 'Tu Privacidad es Nuestra Prioridad en SAME'
-pubDate: 2024-11-15T05:00:00Z
+pubDate: 2025-10-15T05:00:00Z
 description: 'En SAME entendemos la sensibilidad de la información relacionada con la salud mental. Conoce nuestras medidas de confidencialidad y protección de datos para garantizar tu tranquilidad.'
-author: 'Lic. Maricielo Gutiérrez Otero'
+author: 'Dra. María del Carmen Silva Cornejo'
 image: '/blog/post-03-cover.png'
 tags: ['privacidad', 'confidencialidad', 'seguridad']
 ---

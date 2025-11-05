@@ -10,7 +10,7 @@ import Layout from '../../layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import Button from '../../components/ui/Button.astro'
 import MentalHealthCard from '../../components/ui/cards/MentalHealthCard.astro'
-import { RESOURCE_DATA } from '../../data/resources'
+import { RESOURCE_DATA, RESOURCE_ITEMS } from '../../data/resources'
 
 // Get resource slug from URL
 export function getStaticPaths() {
@@ -80,136 +80,34 @@ const SEO = {
 		</div>
 	</section>
 
-	<!-- Resource Information -->
-	<section class="py-16">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<div class="grid md:grid-cols-2 gap-12 items-center">
-					<div>
-						<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-							¿Para quién es este recurso?
-						</h2>
-						<p class="text-gray-600 dark:text-gray-300 mb-6">
-							Este recurso está diseñado específicamente para estudiantes universitarios
-							de la UNJBG que buscan mejorar su bienestar mental y emocional durante
-							su formación académica.
-						</p>
-						<div class={`bg-${resourceInfo.color}-50 dark:bg-${resourceInfo.color}-950/30 rounded-lg p-6 mb-6`}>
-							<h3 class={`font-semibold text-${resourceInfo.color}-800 dark:text-${resourceInfo.color}-200 mb-3`}>
-								Beneficios:
-							</h3>
-							<ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-								<li>• <strong>Accesibilidad:</strong> Disponible 24/7 desde cualquier dispositivo</li>
-								<li>• <strong>Gratuito:</strong> Todos los recursos son completamente gratuitos</li>
-								<li>• <strong>Especializado:</strong> Contenido adaptado a la realidad estudiantil</li>
-								<li>• <strong>Confidencial:</strong> Tu uso es completamente privado</li>
-							</ul>
-						</div>
-					</div>
-					<div>
-						<MentalHealthCard
-							title={resourceInfo.type === 'support' ? "Apoyo Profesional" : "Contenido Educativo"}
-							subtitle={resourceInfo.type === 'support'
-								? "Accede a sesiones de terapia online con profesionales certificados especializados en salud mental estudiantil."
-								: "Contenido educativo especializado diseñado por expertos en psicología y salud mental."}
-							type={resourceInfo.type as 'resource' | 'support'}
-							badge={resourceInfo.content}
-						/>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
-	<!-- Content Preview -->
+	<!-- Resource Cards -->
 	<section class="py-16 bg-gray-50 dark:bg-gray-900">
 		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
+			<div class="max-w-6xl mx-auto">
 				<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 text-center">
-					¿Qué encontrarás aquí?
+					Recursos Disponibles
 				</h2>
-				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-					{resource === 'blog' && (
-						<>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Manejo del Estrés</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Técnicas prácticas para manejar el estrés académico</p>
-							</div>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Técnicas de Relajación</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Métodos probados para reducir la ansiedad</p>
-							</div>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Bienestar Estudiantil</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Consejos para mantener el equilibrio</p>
-							</div>
-						</>
-					)}
-					{resource === 'videos' && (
-						<>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Mindfulness</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Ejercicios de atención plena</p>
-							</div>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Técnicas de Respiración</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Videos guiados paso a paso</p>
-							</div>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Charlas Expertas</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Conferencias de especialistas</p>
-							</div>
-						</>
-					)}
-					{resource === 'podcasts' && (
-						<>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Experiencias Reales</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Historias de otros estudiantes</p>
-							</div>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Consejos Prácticos</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Tips de profesionales</p>
-							</div>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Episodios Temáticos</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Temas específicos de salud mental</p>
-							</div>
-						</>
-					)}
-					{resource === 'meditation' && (
-						<>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Sesiones Cortas</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Meditaciones de 5-10 minutos</p>
-							</div>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Técnicas Variadas</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Diferentes estilos de meditación</p>
-							</div>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Guiadas por Expertos</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Profesionales certificados</p>
-							</div>
-						</>
-					)}
-					{resource === 'therapy' && (
-						<>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Terapia Individual</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Sesiones personalizadas</p>
-							</div>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Apoyo Especializado</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Psicólogos expertos</p>
-							</div>
-							<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-								<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">Horarios Flexibles</h3>
-								<p class="text-sm text-gray-600 dark:text-gray-300">Adaptados a tu rutina</p>
-							</div>
-						</>
-					)}
-				</div>
+				{resourceParam && resourceParam in RESOURCE_ITEMS && RESOURCE_ITEMS[resourceParam] && RESOURCE_ITEMS[resourceParam].length > 0 ? (
+					<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+						{RESOURCE_ITEMS[resourceParam].map((item) => (
+							<MentalHealthCard
+								title={item.title}
+								subtitle={item.description}
+								link={item.url}
+								type="resource"
+								resourceType={item.type}
+								badge={resourceInfo?.content || 'Recurso'}
+							/>
+						))}
+					</div>
+				) : (
+					<div class="text-center py-12">
+						<p class="text-gray-600 dark:text-gray-300 text-lg">
+							Próximamente estarán disponibles más recursos en esta sección.
+						</p>
+					</div>
+				)}
 			</div>
 		</div>
 	</section>

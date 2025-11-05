@@ -85,10 +85,10 @@ export const footerNavigationData: FooterData = {
 					subCategory: 'Podcasts',
 					subCategoryLink: '/resources/podcasts'
 				},
-				{
-					subCategory: 'Meditaciones',
-					subCategoryLink: '/resources/meditation'
-				},
+				// {
+				// 	subCategory: 'Meditaciones',
+				// 	subCategoryLink: '/resources/meditation'
+				// },
 				{
 					subCategory: 'Todos los Recursos',
 					subCategoryLink: '/resources'
@@ -102,18 +102,18 @@ export const footerNavigationData: FooterData = {
 					subCategory: 'Centros de Apoyo',
 					subCategoryLink: '/support'
 				},
-				{
-					subCategory: 'Agendar Cita',
-					subCategoryLink: '/appointments'
-				},
-				{
-					subCategory: 'Dashboard Personal',
-					subCategoryLink: '/dashboard'
-				},
-				{
-					subCategory: 'Preguntas Frecuentes',
-					subCategoryLink: '/faq'
-				},
+				// {
+				// 	subCategory: 'Agendar Cita',
+				// 	subCategoryLink: '/appointments'
+				// },
+				// {
+				// 	subCategory: 'Dashboard Personal',
+				// 	subCategoryLink: '/dashboard'
+				// },
+				// {
+				// 	subCategory: 'Preguntas Frecuentes',
+				// 	subCategoryLink: '/faq'
+				// },
 				{
 					subCategory: 'Contacto',
 					subCategoryLink: '/contact'

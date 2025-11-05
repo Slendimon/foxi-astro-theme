@@ -40,6 +40,7 @@ export const navigationBarData: NavData = {
 	navItems: [
 		{ name: 'Inicio', link: '/' },
 		{ name: 'Proyecto', link: '/proyecto' },
+			{ name: 'Conceptos', link: '/conceptos' },
 		{ name: 'Instrumentos de evaluación', link: '/tests' },
 		{ name: 'Recursos', link: '/resources' },
 		{ name: 'Blog', link: '/blog' },
@@ -48,9 +49,9 @@ export const navigationBarData: NavData = {
 			link: '#',
 			submenu: [
 				{ name: 'Centros de Apoyo', link: '/support' },
-				{ name: 'Citas', link: '/appointments' },
-				{ name: 'Dashboard', link: '/dashboard' },
-				{ name: 'Preguntas Frecuentes', link: '/faq' },
+				// { name: 'Citas', link: '/appointments' },
+				// { name: 'Dashboard', link: '/dashboard' },
+				// { name: 'Preguntas Frecuentes', link: '/faq' },
 				{ name: 'Contacto', link: '/contact' }
 			]
 		},

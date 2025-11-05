@@ -4,18 +4,15 @@
 import Layout from '../layouts/Layout.astro'
 // - UI
 import Hero from '../components/blocks/hero/HomeCTA.astro'
-import Features from '../components/blocks/features/FeatureCards.astro'
+
 import MentalHealthTests from '../components/blocks/tests/MentalHealthTests.astro'
 import MentalHealthResources from '../components/blocks/resources/MentalHealthResources.astro'
 import SupportCenters from '../components/blocks/support/SupportCenters.astro'
 import AboutSAME from '../components/blocks/about/AboutSAME.astro'
 import WellnessTips from '../components/blocks/tips/WellnessTips.astro'
-import StudentTestimonials from '../components/blocks/testimonials/StudentTestimonials.astro'
-import CTA from '../components/blocks/CTA/BasicDark.astro'
+// - UI (for Concepts section)
+import ConceptsGrid from '../components/blocks/concepts/ConceptsGrid.astro'
 
-// Content
-// - Testimonial background
-import testimonialBackground from '../assets/testimonial-bg-01.webp'
 // - SEO
 const SEO = {
 	title: 'SAME - Salud Mental Estudiantil UNJBG',
@@ -30,5 +27,6 @@ const SEO = {
 	<MentalHealthTests />
 	<MentalHealthResources />
 	<WellnessTips />
+	<ConceptsGrid />
 	<SupportCenters />
 </Layout>

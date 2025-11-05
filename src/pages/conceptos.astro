@@ -1,0 +1,127 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import Hero from '../components/blocks/hero/PageHeader.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import Card from '../components/ui/cards/partials/Card.astro'
+import CardBody from '../components/ui/cards/partials/CardBody.astro'
+import { Icon } from 'astro-icon/components'
+
+// SEO
+const SEO = {
+  title: 'Conceptos clave en salud mental - SAME',
+  description:
+    'Definiciones claras sobre depresión, ansiedad generalizada, TEPT, suicidio, consumo de alcohol y tutoría para orientación estudiantil.'
+}
+
+// Page Header
+const header = {
+  title: 'Conceptos clave de <strong>salud mental</strong>',
+  text: 'Referencias breves y confiables para comprender términos fundamentales.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+  <Hero title={header.title} text={header.text} />
+
+  <Section>
+    <Row>
+      <Col span="12">
+        <div class="space-y-4">
+          <Card classes="flex flex-row items-start gap-4 p-4 border-gray-200 bg-white dark:bg-neutral-900 dark:border-neutral-800">
+            <div class="shrink-0 p-3 rounded-lg bg-blue-50 border border-blue-200">
+              <Icon name="lucide:brain-circuit" class="w-7 h-7 text-blue-600" aria-hidden="true" />
+            </div>
+            <CardBody classes="p-0">
+              <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Según la OMS</p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Depresión</h3>
+              <div class="prose prose-sm max-w-none dark:prose-invert">
+                <p>El trastorno depresivo (o depresión) es un trastorno mental común. Implica un estado de ánimo deprimido o la pérdida del placer o el interés por actividades durante largos períodos de tiempo.</p>
+                <p>Se estima que el 3,8% de la población experimenta depresión, incluido el 5% de los adultos (4% entre los hombres y el 6% entre las mujeres) y el 5,7% de los adultos mayores de 60 años. A escala mundial, aproximadamente 280 millones de personas sufren depresión (1). La depresión es aproximadamente un 50% más frecuente entre las mujeres que entre los hombres. En todo el mundo, más del 10% de las embarazadas y de las mujeres que acaban de dar a luz experimentan depresión (2). Cada año se suicidan más de 700 000 personas. El suicidio es la cuarta causa de muerte en el grupo etario de 15 a 29 años.</p>
+              </div>
+            </CardBody>
+          </Card>
+
+          <Card classes="flex flex-row items-start gap-4 p-4 border-gray-200 bg-white dark:bg-neutral-900 dark:border-neutral-800">
+            <div class="shrink-0 p-3 rounded-lg bg-green-50 border border-green-200">
+              <Icon name="lucide:activity" class="w-7 h-7 text-green-600" aria-hidden="true" />
+            </div>
+            <CardBody classes="p-0">
+              <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Según la OMS</p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Ansiedad generalizada</h3>
+              <div class="prose prose-sm max-w-none dark:prose-invert">
+                <p>Los trastornos de ansiedad se caracterizan por un miedo y una preocupación excesivos y por trastornos del comportamiento conexos. Los síntomas son lo suficientemente graves como para provocar una angustia o una discapacidad funcional importantes.</p>
+                <p>Existen varios tipos diferentes:</p>
+                <ul>
+                  <li>Trastorno de ansiedad generalizada (caracterizado por una preocupación excesiva)</li>
+                  <li>Trastorno de pánico (que se caracteriza por ataques de pánico).</li>
+                  <li>Trastorno de ansiedad social (con miedo y preocupación excesivos en situaciones sociales)</li>
+                  <li>Trastorno de ansiedad de separación (que es el miedo excesivo o la ansiedad ante la separación de aquellos individuos con quienes la persona tiene un vínculo emocional profundo)</li>
+                </ul>
+                <p>Existe un tratamiento psicológico eficaz, y dependiendo de la edad y la gravedad, también se puede considerar la medicación.</p>
+              </div>
+            </CardBody>
+          </Card>
+
+          <Card classes="flex flex-row items-start gap-4 p-4 border-gray-200 bg-white dark:bg-neutral-900 dark:border-neutral-800">
+            <div class="shrink-0 p-3 rounded-lg bg-purple-50 border border-purple-200">
+              <Icon name="lucide:book-open" class="w-7 h-7 text-purple-600" aria-hidden="true" />
+            </div>
+            <CardBody classes="p-0">
+              <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Según MINSA</p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Estrés postraumático (TEPT)</h3>
+              <div class="prose prose-sm max-w-none dark:prose-invert">
+                <p>El trastorno de estrés postraumático (TEPT) como una condición de salud mental que se desarrolla tras la exposición a eventos sumamente amenazantes o aterradores. Este trastorno puede manifestarse en personas que han experimentado o presenciado eventos como secuestros, robos, violencia, desastres naturales o accidentes graves.</p>
+              </div>
+            </CardBody>
+          </Card>
+
+          <Card classes="flex flex-row items-start gap-4 p-4 border-red-200 bg-white dark:bg-neutral-900 dark:border-red-300">
+            <div class="shrink-0 p-3 rounded-lg bg-red-50 border border-red-200">
+              <Icon name="lucide:alert-triangle" class="w-7 h-7 text-red-600" aria-hidden="true" />
+            </div>
+            <CardBody classes="p-0">
+              <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Según la OMS</p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Suicidio</h3>
+              <div class="prose prose-sm max-w-none dark:prose-invert">
+                <p>El suicidio es definido por la Organización Mundial de la Salud (OMS) como el acto deliberado de quitarse la vida. Su prevalencia y los métodos utilizados varían de acuerdo a los diferentes países.</p>
+              </div>
+            </CardBody>
+          </Card>
+
+          <Card classes="flex flex-row items-start gap-4 p-4 border-gray-200 bg-white dark:bg-neutral-900 dark:border-neutral-800">
+            <div class="shrink-0 p-3 rounded-lg bg-yellow-50 border border-yellow-200">
+              <Icon name="lucide:book-open" class="w-7 h-7 text-yellow-600" aria-hidden="true" />
+            </div>
+            <CardBody classes="p-0">
+              <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Según la OMS</p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Consumo de alcohol</h3>
+              <div class="prose prose-sm max-w-none dark:prose-invert">
+                <p>Según la OMS, el alcoholismo se define como cualquier deterioro en el funcionamiento físico, mental o social de una persona, que se puede inferir que el alcohol es parte del nexo causal que provoca dicho trastorno. Esta definición implica que el alcoholismo no solo se caracteriza por el consumo excesivo de alcohol, sino también por los efectos negativos que este tiene en la salud y bienestar de la persona.</p>
+              </div>
+            </CardBody>
+          </Card>
+
+          <Card classes="flex flex-row items-start gap-4 p-4 border-gray-200 bg-white dark:bg-neutral-900 dark:border-neutral-800">
+            <div class="shrink-0 p-3 rounded-lg bg-teal-50 border border-teal-200">
+              <Icon name="lucide:heart-handshake" class="w-7 h-7 text-teal-600" aria-hidden="true" />
+            </div>
+            <CardBody classes="p-0">
+              <p class="text-xs font-medium text-gray-500 dark:text-gray-400">Según SUNEDU</p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Tutoría</h3>
+              <div class="prose prose-sm max-w-none dark:prose-invert">
+                <p>La tutoría es una interacción entre un docente tutor y un estudiante que busca promover el bienestar, fortalecer las competencias socioafectivas y cognitivas, y acompañar y orientar a los estudiantes en diferentes necesidades personales y sociales en un clima de confianza y respeto.</p>
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+      </Col>
+    </Row>
+  </Section>
+</Layout>
+
+

@@ -26,6 +26,7 @@ type Props = {
 	image?: any
 	link?: string
 	type?: 'test' | 'resource' | 'support' | 'crisis' | 'sensitive'
+	resourceType?: 'article' | 'video' | 'podcast' | 'meditation'
 	duration?: string
 	badge?: string
 	urgent?: boolean
@@ -36,6 +37,7 @@ const {
 	image,
 	link,
 	type = 'resource',
+	resourceType,
 	duration,
 	badge,
 	urgent = false
@@ -50,6 +52,7 @@ const typeStyles = {
 	sensitive: 'bg-yellow-50 border-yellow-200 hover:bg-yellow-100'
 }
 
+// Icon mapping for general types
 const iconMap = {
 	test: 'lucide:brain-circuit',
 	resource: 'lucide:book-open',
@@ -58,13 +61,35 @@ const iconMap = {
 	sensitive: 'lucide:eye'
 }
 
+// Icon mapping for specific resource types (overrides general type icon)
+const resourceTypeIconMap = {
+	article: 'lucide:file-text',
+	video: 'lucide:play-circle',
+	podcast: 'lucide:headphones',
+	meditation: 'lucide:sparkles'
+}
+
+// Get the icon to use - prioritize resourceType over type
+const iconToUse = resourceType && resourceType in resourceTypeIconMap 
+	? resourceTypeIconMap[resourceType as keyof typeof resourceTypeIconMap]
+	: iconMap[type]
+
 const iconColors = {
 	test: 'text-blue-600',
 	resource: 'text-green-600',
 	support: 'text-purple-600',
 	crisis: 'text-red-600',
-	sensitive: 'text-yellow-600'
+	sensitive: 'text-yellow-600',
+	article: 'text-green-600',
+	video: 'text-red-600',
+	podcast: 'text-purple-600',
+	meditation: 'text-indigo-600'
 }
+
+// Get the icon color - prioritize resourceType over type
+const iconColorToUse = resourceType && resourceType in iconColors
+	? iconColors[resourceType as keyof typeof iconColors]
+	: iconColors[type]
 ---
 
 <Card classes={`mental-health-card ${typeStyles[type]} h-full transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2 ${urgent ? 'ring-2 ring-red-300' : ''}`} link={link}>
@@ -73,7 +98,7 @@ const iconColors = {
 		<div class="flex items-center justify-between mb-3">
 			<div class="flex items-center gap-3">
 				<div class={`p-2 rounded-lg ${typeStyles[type].split(' ')[0]} border ${typeStyles[type].split(' ')[1]}`}>
-					<Icon name={iconMap[type]} class={`w-6 h-6 ${iconColors[type]} flex-shrink-0`} aria-hidden="true" />
+					<Icon name={iconToUse} class={`w-6 h-6 ${iconColorToUse} flex-shrink-0`} aria-hidden="true" />
 				</div>
 				{badge && (
 					<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-white/80 text-gray-700 border border-gray-200" role="status" aria-label={`Categoría: ${badge}`}>

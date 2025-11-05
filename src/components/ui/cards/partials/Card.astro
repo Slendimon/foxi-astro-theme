@@ -16,7 +16,12 @@ const { link, classes } = Astro.props
 
 {
 	link ? (
-		<a href={link} class:list={['card', { [`${classes}`]: classes }]}>
+		<a 
+			href={link} 
+			class:list={['card', { [`${classes}`]: classes }]}
+			target={link.startsWith('http') ? '_blank' : undefined}
+			rel={link.startsWith('http') ? 'noopener noreferrer' : undefined}
+		>
 			<slot />
 		</a>
 	) : (

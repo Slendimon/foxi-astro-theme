@@ -1,0 +1,73 @@
+---
+// Concepts Grid Section
+// ------------
+// Description: Small cards linking to /conceptos with richer summaries
+
+// UI
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import MentalHealthCard from '../../ui/cards/MentalHealthCard.astro'
+---
+
+<Section id="conceptos" classes="bg-neutral-50 dark:bg-neutral-900">
+  <Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">Conceptos <strong>clave</strong></h2>
+			<p class="pb-0 text-lg">
+				Aprende lo esencial y profundiza en la página de conceptos.
+			</p>
+		</Col>
+	</Row>
+  <Row>
+    <Col span="12">
+      <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <MentalHealthCard
+          title="Depresión"
+          subtitle="Trastorno común con ánimo deprimido y pérdida de interés por periodos prolongados. Datos globales: ~3,8% población; mayor prevalencia en mujeres; alto impacto en jóvenes."
+          type="resource"
+          badge="OMS"
+          link="/conceptos"
+        />
+        <MentalHealthCard
+          title="Ansiedad generalizada"
+          subtitle="Preocupación y miedo excesivos con malestar significativo. Incluye TAG, pánico, ansiedad social y de separación. Psicoterapia eficaz; medicación según edad y severidad."
+          type="resource"
+          badge="OMS"
+          link="/conceptos"
+        />
+        <MentalHealthCard
+          title="TEPT"
+          subtitle="Tras eventos amenazantes: recuerdos intrusivos, evitación, hiperalerta; impacto funcional relevante. Asociado a violencia, desastres o accidentes."
+          type="resource"
+          badge="MINSA"
+          link="/conceptos"
+        />
+        <MentalHealthCard
+          title="Suicidio"
+          subtitle="Acto deliberado de quitarse la vida; variaciones en prevalencia y métodos por país. Priorizar prevención, señales de alerta y acceso inmediato a ayuda."
+          type="crisis"
+          badge="OMS"
+          urgent
+          link="/conceptos"
+        />
+        <MentalHealthCard
+          title="Consumo de alcohol"
+          subtitle="Deterioro físico, mental o social donde el alcohol es parte del nexo causal. Importa el impacto, no solo la cantidad consumida."
+          type="resource"
+          badge="OMS"
+          link="/conceptos"
+        />
+        <MentalHealthCard
+          title="Tutoría"
+          subtitle="Interacción docente–estudiante para bienestar, competencias socioafectivas y cognitivas, y orientación en un entorno de confianza y respeto."
+          type="support"
+          badge="SUNEDU"
+          link="/conceptos"
+        />
+      </div>
+    </Col>
+  </Row>
+</Section>
+
+
